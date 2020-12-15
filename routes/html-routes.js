@@ -43,6 +43,18 @@ module.exports = function(app) {
    })
   
 
+   app.get("/createRecipe", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/recipeForm.html"));
+  });
+
+  app.get("/myrecipes", (req, res)=>{
+    if(req.user){
+      res.sendFile(path.join(__dirname, "../public/myrecipes.html"));
+    }else{
+      res.sendFile(path.join(__dirname, "../public/login.html"));
+    }
+  }) 
+
 
 }
 

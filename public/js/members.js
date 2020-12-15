@@ -1,5 +1,6 @@
 $(document).ready(() => {
 
+
 //If the city search button is clicked, call the searchCity function
   $("#cityButton").on("click", function () {
     event.stopPropagation();
@@ -97,3 +98,4 @@ $(document).ready(() => {
 
 
 })
+

@@ -55,8 +55,31 @@ module.exports = function(app) {
   });
 
 
+   //If user exist, then update recipe otherwise return page not found
+   app.post("/api/createRecipe", function(req, res) {
+    if(req.user){
+      
+      req.body.UserId = req.user.id   
+      db.Recipes.create(req.body)
+      res.sendStatus(200)
+    }
+    else{
+      res.sendStatus(401)
+    }
+  });
 
-  
+
+  app.get("/api/myrecipes", function(req, res) {
+    if(req.user){
+     
+      db.Recipes.findAll({attributes:["recipeTitle","description"]})
+    }
+        
+    else{
+      res.sendStatus(401)
+    }
+  });
+
 
 
 
