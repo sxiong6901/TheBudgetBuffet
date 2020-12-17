@@ -1,36 +1,50 @@
-// Requiring necessary npm packages
-const express = require("express");
-const session = require("express-session");
-// Requiring passport as we've configured it
-const passport = require("./config/passport");
+require('dotenv').config()
 
-// Setting up port and requiring models for syncing
-const PORT = process.env.PORT || 8080;
-const db = require("./models");
+//////////////////////////////////
+////     JWT DEMO          //////
+////////////////////////////////
+const express = require('express')
+const logger = require('morgan')
+const mongoose = require('mongoose')
+const usersRoutes = require('./routes')
 
-// Creating express app and configuring middleware needed for authentication
-const app = express();
+const app = express()
+
+//////////////////////////////////////////////////////////
+////    configure and connect to db server         //////
+////////////////////////////////////////////////////////
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/auth'
+const PORT = process.env.PORT || 3001
+
+mongoose.set('useCreateIndex', true)
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true }, (err) => {
+	console.log(err || `Connected to MongoDB.`)
+})
+
+//////////////////////////////////
+////   register middleware //////
+////////////////////////////////
+app.use(express.static(`${__dirname}/client/build`))
+app.use(logger('dev'))
+app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-app.use(express.static("public"));
-// We need to use sessions to keep track of our user's login status
-app.use(
-  session({ secret: "keyboard cat", resave: true, saveUninitialized: true })
-);
-app.use(passport.initialize());
-app.use(passport.session());
 
-// Requiring our routes
-require("./routes/html-routes.js")(app);
-require("./routes/api-routes.js")(app);
+//////////////////////////////////
+////     api catalogue     //////
+////////////////////////////////
+app.get('/api', (req, res) => {
+	res.json({message: "API root"})
+})
 
-// Syncing our database and logging a message to the user upon success
-db.sequelize.sync({force:true}).then(() => {
-  app.listen(PORT, () => {
-    console.log(
-      "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
-      PORT,
-      PORT
-    );
-  });
-});
+app.use('/api/users', usersRoutes)
+
+app.use('*', (req, res) => {
+	res.sendFile(`${__dirname}/client/build/index.html`)
+})
+
+//////////////////////////////////
+////     start app server  //////
+////////////////////////////////
+app.listen(PORT, (err) => {
+	console.log(err || `Server running on port ${PORT}.`)
+})
