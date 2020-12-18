@@ -11,8 +11,9 @@ usersRouter.route('/').post(usersCtrl.create)
 
 usersRouter.post('/authenticate', usersCtrl.authenticate)
 
+
 // this is the firewell
-usersRouter.use(verifyToken)
+usersRouter.route('/add').post(usersCtrl.makeRecipe)
 
 usersRouter.route('/secret').get(usersCtrl.show)
 

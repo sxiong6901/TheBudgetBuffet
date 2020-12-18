@@ -15,6 +15,9 @@ module.exports = {
 	show: async (req, res) => {
 		// retrieve jwt from headers
 		const token = req.get('token')
+		if(!token){
+			return res.sendStatus('403')
+		}
 		let userProfile = jwtDecode(token)		
 		let joke = jokes[Math.floor(Math.random() * jokes.length)]
 		// note we execute .lean() to convert a mongoose document to js doc
@@ -63,5 +66,22 @@ module.exports = {
 			const token = signToken(user)
 			res.json({success: true, message: "Token attached.", token})
 		})
+	},
+	makeRecipe: (req, res)=>{
+		const token = req.get('token')
+		if(!token){
+			return res.sendStatus('403')
+		}
+		let userProfile = jwtDecode(token)
+		console.log(userProfile)
+		User.findByIdAndUpdate(
+			userProfile._id,
+			{$push: {recipes: req.body}},
+			{new: true, runValidators: true}
+			).then(function(recipe) {
+			res.json(recipe);
+			
+		  });
+		// let doc = await User.find({email: userProfile.email}).lean()		
 	}
 }
