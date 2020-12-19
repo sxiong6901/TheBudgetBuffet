@@ -6,10 +6,10 @@ function App() {
     <div className="App">
       <header className="App-header">
 
-        <img src="../../BudgetPlanning.png" className="App-logo" alt="logo" />
+        <img src="../../BudgetPlanning.png" className="App-logo" alt="logo" /><br></br>
         <p> 
-          <input type="text" placeholder="Search.." name="search"></input>
-          <button type="submit"><i class="fa fa-search"></i></button>
+          <input type="text" placeholder="Search.." name="search" id="search-term"></input>
+          <button type="submit" id="Search"><i class="fa fa-search"></i></button>
         </p>
         
   
@@ -20,6 +20,9 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
+    <div class="search-results">
+
+    </div>
 
         </a>
       </header>
