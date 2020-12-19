@@ -11,6 +11,7 @@ const NavBar = (props) => {
 						<Link to="/about">About</Link>
 						<Link to="/createRecipe">Share A Recipe</Link>
 						<Link to="/myrecipe">My Recipes</Link>
+						<Link to="/viewAll">View Recipes</Link>
 						<Link to="/logout">Log Out</Link>
 					</span>
 				)

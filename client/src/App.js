@@ -3,6 +3,7 @@ import { Switch, Route, Redirect } from 'react-router-dom'
 import API from './utils/API'
 import NavBar from './components/NavBar'
 import Recipe from './pages/Recipe'
+import ViewAll from './pages/ViewAll'
 import About from './pages/About'
 import LogIn from './pages/LogIn'
 import LogOut from './pages/LogOut'
@@ -60,19 +61,28 @@ class App extends React.Component {
 					}} />
 
 					<Route path="/createRecipe" component={Recipe} />
+
 					<Route path="/myrecipe" render={() => {
 						return currentUser
 
 							? <MyRecipe profile={currentUser} />
 							: <Redirect to="/login" />
 					}} />
+
+					<Route path="/viewAll" render={() => {
+						return currentUser
+
+							? <ViewAll profile={currentUser} />
+							: <Redirect to="/login" />
+					}} />
+
 					<Route path="/" render={() => {
 						return currentUser
 
 							? <SignUp profile={currentUser} />
 							: <Redirect to="/login" />
 					}} />
-					
+
 				</Switch>
 			</div>
 		)
