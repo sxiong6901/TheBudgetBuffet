@@ -71,6 +71,22 @@ const API = {
 			console.log(serverResponse)
 			return serverResponse
 		})
+	},
+	viewRecipe: function(recipe){
+		return axios.get(`/api/users/view`,recipe)
+		.then((serverResponse) => {	
+			console.log(`response from server`)
+			console.log(serverResponse)
+			return serverResponse
+		})
+	},
+	myRecipes: function(recipe){
+		return axios.get(`/api/users/myRecipe`,recipe)
+		.then((serverResponse) => {	
+			console.log(`response from server`)
+			console.log(serverResponse)
+			return serverResponse
+		})
 	}
 }
 axios.defaults.headers.common['token'] = API.getToken()

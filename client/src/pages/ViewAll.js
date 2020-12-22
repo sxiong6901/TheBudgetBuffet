@@ -1,12 +1,12 @@
 import React from 'react'
 
 
-const ViewAll = ({profile}) => {
+const viewAll = ({profile}) => {
 	return (
-		<div className="view">
+		<div className="viewAll">
 		
 		<div>
-            view all shared recipes
+            all shared recipes show here0
         </div>
   
 			
@@ -26,4 +26,4 @@ const ViewAll = ({profile}) => {
 	)
 }
 
-export default ViewAll
+export default viewAll
