@@ -77,7 +77,7 @@ const API = {
 		.then((serverResponse) => {	
 			console.log(`response from server`)
 			console.log(serverResponse)
-			return serverResponse
+			return serverResponse.data
 		})
 	},
 	myRecipes: function(recipe){
@@ -85,7 +85,7 @@ const API = {
 		.then((serverResponse) => {	
 			console.log(`response from server`)
 			console.log(serverResponse)
-			return serverResponse
+			return serverResponse.data
 		})
 	}
 }

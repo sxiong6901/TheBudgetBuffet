@@ -1,29 +1,31 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import RecipeCard from '../components/RecipeCard'
+import API from '../utils/API'
+
+const ViewAll = props => {
+	const [recipes, setRecipes] = useState([])
+	useEffect(() => {
+		API.viewRecipe()
+			.then(results => {
+				setRecipes(curr => [...curr, ...results])
+			})
+	}, [])
+
+	// handleChange =({target}) => {
+	// 	const {name, value} = target; 
+	// 	this.setState({ [name]: value});
+	// }
 
 
-const viewAll = ({profile}) => {
+
 	return (
-		<div className="viewAll">
-		
-		<div>
-            all shared recipes show here0
-        </div>
-  
+		<>
+			{recipes && recipes.map(recipe=>(
+				<RecipeCard key= {recipe._id} recipe={recipe}/>
 			
-		 
-	
-		  
-		  <a
-			className="App-link"
-			href="https://reactjs.org"
-			target="_blank"
-			rel="noopener noreferrer"
-		  >
-  
-		  </a>
-	
-	  </div>
+			))}
+		</>
 	)
 }
 
-export default viewAll
+export default ViewAll
