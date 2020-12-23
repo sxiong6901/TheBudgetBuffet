@@ -85,27 +85,19 @@ module.exports = {
 		// let doc = await User.find({email: userProfile.email}).lean()		
 	},
 	
-	viewRecipe: (req, res)=>{
+	viewRecipe: async (req, res)=>{
 		const token = req.get('token')
 		if(!token){
 			return res.sendStatus('403')
 		}
-		let userProfile = jwtDecode(token)
-		console.log(userProfile)
-		db.User.find({})
-			// userProfile._id,
-			.populate("recipe")
-			.then(dbRecipe => {
-				res.json(dbRecipe);
-			})
-			.catch(err => {
-				res.json(err);
-			})
+		const recipes = await User.find({recipes:{$gt: []}},{recipes:1, _id:0})
+		let recpArr = []
+		recipes.forEach(recipe=>recipe.recipes.forEach(recipeSingular=>recpArr.push(recipeSingular)))
+		res.json(recpArr)
 		
-			
 		
 	},
-	
+
 	myRecipes: (req, res)=>{
 		const token = req.get('token')
 		if(!token){
@@ -113,16 +105,16 @@ module.exports = {
 		}
 		let userProfile = jwtDecode(token)
 		console.log(userProfile)
-		db.User.find({})
-			// userProfile._id,
-			.populate("recipe")
-			.then(dbRecipe => {
-				res.json(dbRecipe);
-			})
-			.catch(err => {
-				res.json(err);
-			})
-		
+		// db.User.find({})
+		// 	// userProfile._id,
+		// 	.populate("recipe")
+		// 	.then(dbRecipe => {
+		// 		res.json(dbRecipe);
+		// 	})
+		// 	.catch(err => {
+		// 		res.json(err);
+		// 	})
+		res.json(userProfile.recipes)
 			
 		
 	}
