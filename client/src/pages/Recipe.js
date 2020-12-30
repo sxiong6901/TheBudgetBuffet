@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import API from '../utils/API';
 
+
 const Recipe = ({profile}) => {
 	const [title, setTitle] = useState("");
 	const [ingredients, setIngredients] = useState("");
@@ -13,11 +14,11 @@ const Recipe = ({profile}) => {
 		console.log(title, ingredients, directions)
 	}
 	return (
+		
+		
 		<div className="createRecipe">
 		
-		
-  
-			
+
 		  <form onSubmit={formSubmit}>
 				<div class="form-group">
                 <label for="recipetitle">Recipe Title</label>
@@ -32,7 +33,7 @@ const Recipe = ({profile}) => {
                 <label for="description">Description</label>
                 <input type="text" class="form-control" id="description" value={directions} onChange={e=>setDirections(e.target.value)}/>
               </div>
-			  <button  type="submit">Submit</button>
+			  <button  type="submit">Add Recipe</button>
 				</form>
 
 		  
