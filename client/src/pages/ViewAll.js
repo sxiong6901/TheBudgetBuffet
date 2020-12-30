@@ -23,7 +23,7 @@ const ViewAll = props => {
 		  <container>
         <h2> View Recipes Shared By All Users </h2>
 	<p>	<input type="text" placeholder="Search.." name="search"></input>
-		<button type="submit"><i class="fa fa-search">Search</i></button></p>
+		<button type="submit"><i className="fa fa-search">Search</i></button></p>
 			
         </container>
 		
