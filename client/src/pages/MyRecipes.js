@@ -20,11 +20,8 @@ const MyRecipes = props => {
 
 	return (
 		<>
-		<h1>My Recipes</h1>
-			{recipes && recipes.map(recipe=>(
-				<RecipeCard key= {recipe._id} recipe={recipe}/>
-			
-			))}
+			<h1>My Recipes</h1>
+			{recipes && recipes.map( recipe => <RecipeCard key={recipe._id} recipe={recipe} />)}
 		</>
 	)
 }

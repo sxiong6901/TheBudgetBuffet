@@ -105,16 +105,14 @@ module.exports = {
 		}
 		let userProfile = jwtDecode(token)
 		console.log(userProfile)
-		// db.User.find({})
-		// 	// userProfile._id,
-		// 	.populate("recipe")
-		// 	.then(dbRecipe => {
-		// 		res.json(dbRecipe);
-		// 	})
-		// 	.catch(err => {
-		// 		res.json(err);
-		// 	})
-		res.json(userProfile.recipes)
+		User.findById(userProfile._id,(err, user)=>{
+			if (err){
+				console.log(err);
+				return res.sendStatus(500);
+			}
+			res.json(user.recipes);
+		});
+		
 			
 		
 	}

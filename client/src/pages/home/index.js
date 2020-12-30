@@ -31,7 +31,7 @@ const Home = ({profile}) => {
 					<img src="BudgetPlanning.png" className="App-logo" alt="logo" />
 		  <p> 
 			<input type="text" placeholder="Search.." name="search"></input>
-			<button type="submit"><i class="fa fa-search">Search</i></button>
+			<button type="submit"><i className="fa fa-search">Search</i></button>
 		  </p>
 			
 				{/* <button onClick={() => handleClick(profile.token)}>Get Secret Joke</button>
