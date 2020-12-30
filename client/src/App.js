@@ -12,6 +12,7 @@ import Home from './pages/home'
 import MyRecipe from './pages/MyRecipes'
 
 
+
 class App extends React.Component {
 	state = { currentUser: API.getCurrentUser() }
 
