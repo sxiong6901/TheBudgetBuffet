@@ -4,7 +4,8 @@
   "private": true,
   "dependencies": {
     "3t": "^1.0.0",
-    "axios": "^0.21.0",
+    "api": "^2.5.0",
+    "axios": "^0.21.1",
     "jwt-decode": "^3.1.2",
     "milligram": "^1.4.1",
     "mongod": "^2.0.0",
@@ -22,7 +23,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "proxy": "http://localhost:3000",
+  "proxy": "http://localhost:3001",
   "browserslist": [
     ">0.2%",
     "not dead",

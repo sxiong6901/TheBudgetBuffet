@@ -29,6 +29,9 @@ module.exports = {
 	// create a new user
 	create: (req, res) => {
 		User.create(req.body, (err, user) => {
+			console.log('Sign up! It works!')
+			console.log(req.body)
+			console.log(user)
 			if(err) return res.json({success: false, code: err.code})
 			// once user is created, generate a JWT and return to client"
 			const token = signToken(user)
