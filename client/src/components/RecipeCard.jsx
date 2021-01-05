@@ -7,7 +7,7 @@ const RecipeCard =props => {
 
         <div className="card"  style={{ "width": "22rem" }}>
             <div className="card-body">
-            <button onClick={()=>props.removeRecipe(props.recipe._id)} className="remove">Delete </button>
+            <span onClick={()=>props.removeRecipe(props.recipe._id)} className="remove">Delete </span>
             {/* <button onClick={()=>props.saveRecipe(props._id)} className="save">Save To Favorites</button> */}
                 <h4 className="card-title">{props.recipe.title}</h4>
                 <h5 className="card-subtitle mb-2 text-muted">Ingredients:</h5>
