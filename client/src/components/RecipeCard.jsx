@@ -7,6 +7,7 @@ const RecipeCard =props => {
 
         <div className="card"  style={{ "width": "22rem" }}>
             <div className="card-body">
+            
                 <h4 className="card-title">{props.recipe.title}</h4>
                 <h5 className="card-subtitle mb-2 text-muted">Ingredients:</h5>
                 <ul>
