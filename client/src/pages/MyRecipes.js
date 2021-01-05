@@ -13,20 +13,11 @@ const MyRecipes = props => {
 	}, [])
 
 	const deleteRecipe=(id)=>{
-		console.log(id)
-	
-		var newRecipeList = recipes.filter(recipe=>recipes.id !== id)
+		console.log(id)	
+		var newRecipeList = recipes.filter(recipe=>recipe._id !== id)
 		setRecipes(newRecipeList)
-		console.log(newRecipeList)
-		
-		
-
-		
-	  }
-	  
-	 
-	
-
+						
+	  }	 
 	return (
 		<>
 			<h1>My Recipes</h1>
