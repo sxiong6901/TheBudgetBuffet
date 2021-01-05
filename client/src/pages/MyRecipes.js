@@ -8,20 +8,30 @@ const MyRecipes = props => {
 		API.myRecipes()
 			.then(results => {
 				setRecipes(curr => [...curr, ...results])
+			
 			})
 	}, [])
 
-	// handleChange =({target}) => {
-	// 	const {name, value} = target; 
-	// 	this.setState({ [name]: value});
-	// }
+	const deleteRecipe=(id)=>{
+		console.log(id)
+	
+		var newRecipeList = recipes.filter(recipe=>recipes.id !== id)
+		setRecipes(newRecipeList)
+		console.log(newRecipeList)
+		
+		
 
-
+		
+	  }
+	  
+	 
+	
 
 	return (
 		<>
 			<h1>My Recipes</h1>
-			{recipes && recipes.map( recipe => <RecipeCard key={recipe._id} recipe={recipe} />)}
+			
+			{recipes && recipes.map( recipe => <RecipeCard key={recipe._id} recipe={recipe} removeRecipe = {deleteRecipe}></RecipeCard>)}
 		</>
 	)
 }
