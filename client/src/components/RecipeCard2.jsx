@@ -1,15 +1,14 @@
 import React from 'react'
 
-const RecipeCard =props => {
+const RecipeCard2 =props => {
     return (
 
      
 
         <div className="card"  style={{ "width": "22rem" }}>
             <div className="card-body">
-            <span onClick={()=>props.removeRecipe(props.recipe._id)} className="remove">Delete </span>
-            <span onClick={()=>props.saveRecipe(props.recipe._id)} className="save">Save</span>
-            <span onClick={()=>props.editRecipe(props.recipe._id)} className="edit">edit</span>
+            <span onClick={()=>props.saveRecipe(props._id)} className="save">Save To Favorites</span>
+            
                 <h4 className="card-title">{props.recipe.title}</h4>
                 <h5 className="card-subtitle mb-2 text-muted">Ingredients:</h5>
                 <ul>
@@ -23,4 +22,4 @@ const RecipeCard =props => {
     )
 }
 
-export default RecipeCard
+export default RecipeCard2

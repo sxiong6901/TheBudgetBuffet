@@ -23,6 +23,7 @@
 	left: -10px; 
 	word-break: break-all;
   }
+  
   .card {
 	  float: left;
 	  display: grid;
@@ -32,9 +33,20 @@
 	  padding: 10px;
 	  font-size: 10px; 
   }
-  .container div{
-	/* background-color: rgba(255, 255, 255, 0.8);
-	text-align: center;
-	padding: 20px 0;
-	font-size: 30px; */
+  span.remove {
+	  background-color: red;
+	  color: white;
+	  border: 5px;
+	  padding: 5px;
+	  margin: 5px;
+	  border-radius: 10%;
   }
+  span.save {
+	  background-color: purple;
+	  color:white; 
+	  margin: 5px;
+  }
+  span.edit {
+	background-color:blue;
+	color:white; 
+}

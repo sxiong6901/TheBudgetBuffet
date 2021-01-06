@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import RecipeCard from '../components/RecipeCard'
+import RecipeCard2 from '../components/RecipeCard2'
 import API from '../utils/API'
 
 const ViewAll = props => {
@@ -30,7 +30,7 @@ const ViewAll = props => {
        
       
 			{recipes && recipes.map(recipe=>(
-				<RecipeCard key= {recipe._id} recipe={recipe}/>
+				<RecipeCard2 key= {recipe._id} recipe={recipe}/>
 			
 			))}
 		</>
