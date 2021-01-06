@@ -1,6 +1,7 @@
 import React from 'react'
 
 const RecipeCard =props => {
+    console.log(props.recipe)
     return (
 
      
