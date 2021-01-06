@@ -38,9 +38,15 @@
 	  color: white;
 	  border: 5px;
 	  padding: 5px;
+	  margin: 5px;
 	  border-radius: 10%;
   }
   span.save {
 	  background-color: purple;
 	  color:white; 
+	  margin: 5px;
   }
+  span.edit {
+	background-color:blue;
+	color:white; 
+}
