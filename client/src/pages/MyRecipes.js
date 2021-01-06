@@ -4,6 +4,7 @@ import API from '../utils/API'
 
 const MyRecipes = props => {
 	const [recipes, setRecipes] = useState([])
+	const [favoriteRecipes, setFavoriteRecipes]=useState([])
 	useEffect(() => {
 		API.myRecipes()
 			.then(results => {
@@ -15,17 +16,21 @@ const MyRecipes = props => {
 	const deleteRecipe=(id)=>{
 		console.log(id)	
 		var newRecipeList = recipes.filter(recipe=>recipe._id !== id)
+		
 		setRecipes(newRecipeList)
 						
 	  }	 
 
 	  const save=(id)=>{
 		console.log(id)	
-		var favoritesList = recipes.map(recipe=>recipe._id !== id)
-		setRecipes(favoritesList)
+		
+		var favoritesList = favoriteRecipes.map(recipe=>recipe._id !== id)
+		setFavoriteRecipes(favoritesList)
 		console.log(favoritesList)
-						
-	  }	
+		
+	
+	  }
+	
 
 	return (
 		<>
