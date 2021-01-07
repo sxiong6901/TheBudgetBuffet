@@ -32,6 +32,8 @@ return (
 			<h3>Meal Planning Tips
 				<i className= "fa fa-utensils" aria-hidden="true"/>
 			</h3>
+
+
 			
 			
 			</div>
