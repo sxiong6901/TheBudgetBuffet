@@ -12,7 +12,8 @@ const NavBar = (props) => {
 						<Link to="/about">About</Link>
 						<Link to="/recipeSearch">Search</Link>
 						<Link to="/myrecipe">My Recipes</Link>
-						<Link to="/viewAll">View Recipes</Link>
+						<Link to="/viewAll">Explore Recipes</Link>
+						<Link to="/favorites">My Favorites</Link>
 						<Link to="/logout">Log Out</Link>
 					</span>
 				)
