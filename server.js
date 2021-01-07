@@ -42,9 +42,25 @@ app.use('*', (req, res) => {
 	res.sendFile(`${__dirname}/client/build/index.html`)
 })
 
+app.use('*', (req, res) => {
+	res.sendFile(`${__dirname}/client/src/pages/recipeSearch/index.html`)
+})
 //////////////////////////////////
 ////     start app server  //////
 ////////////////////////////////
+
+let http = require('http');
+ 
+let handleRequest = (request, response) => {
+    response.writeHead(200, {
+        'Content-Type': 'text/plain'
+    });
+    response.write('Hi There!');
+    response.end();
+};
+ 
+http.createServer(handleRequest).listen(8000);
+
 app.listen(PORT, (err) => {
 	console.log(err || `Server running on port ${PORT}.`)
 })
