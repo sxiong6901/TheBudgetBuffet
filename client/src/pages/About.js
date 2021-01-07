@@ -1,8 +1,10 @@
 import React from 'react'
+import {Container} from "react-bootstrap";
 
 
 const About = ({profile}) => {
-	return (
+	
+return (
 		<div className="about">
 {/* <Container>
   <Row>
@@ -30,13 +32,13 @@ const About = ({profile}) => {
 			<h3>Meal Planning Tips
 				<i className= "fa fa-utensils" aria-hidden="true"/>
 			</h3>
+
+
 			
 			
 			</div>
   
-  
-			
-		 
+			 
 	
 		  
 		  <a

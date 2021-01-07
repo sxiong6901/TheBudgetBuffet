@@ -15,17 +15,22 @@
   "author": "Strategic Machines",
   "license": "MIT",
   "dependencies": {
+    "axios": "^0.21.1",
     "bcrypt": "^5.0.0",
+    "bootstrap": "^4.5.3",
     "dotenv": "^6.1.0",
     "express": "^4.17.1",
     "if-env": "^1.0.4",
     "jsonwebtoken": "^8.5.1",
     "jwt-decode": "^3.1.2",
+    "mongodb": "^3.6.3",
     "mongoose": "5.11.4",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "react-bootstrap": "^1.4.0",
+    "robo": "^0.3.0"
   },
   "devDependencies": {
-    "concurrently": "^4.1.0",
-    "nodemon": "^1.18.7"
+    "concurrently": "^5.3.0",
+    "nodemon": "^1.19.4"
   }
 }
