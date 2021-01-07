@@ -1,5 +1,5 @@
 import React from 'react'
-import {Container} from "react-bootstrap";
+// import {Container} from "react-bootstrap";
 
 
 const About = ({profile}) => {
@@ -32,6 +32,8 @@ return (
 			<h3>Meal Planning Tips
 				<i className= "fa fa-utensils" aria-hidden="true"/>
 			</h3>
+
+
 			
 			
 			</div>
