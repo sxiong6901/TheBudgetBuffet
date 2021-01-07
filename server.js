@@ -42,9 +42,6 @@ app.use('*', (req, res) => {
 	res.sendFile(`${__dirname}/client/build/index.html`)
 })
 
-app.use('*', (req, res) => {
-	res.sendFile(`${__dirname}/client/src/pages/recipeSearch/index.html`)
-})
 //////////////////////////////////
 ////     start app server  //////
 ////////////////////////////////

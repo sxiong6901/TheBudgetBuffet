@@ -66,13 +66,6 @@ class App extends React.Component {
 
 					<Route path="/createRecipe" component={Recipe} />
 
-					<Route path="/recipeSearch" render={() => {
-						return currentUser
-
-							? <RecipeSearch profile={currentUser} />
-							: <Redirect to="/login" />
-					}} />
-
 					<Route path="/myrecipe" render={() => {
 						return currentUser
 
@@ -80,6 +73,12 @@ class App extends React.Component {
 							: <Redirect to="/login" />
 					}} />
 
+					<Route path="/recipeSearch" render={() => {
+						return currentUser
+
+							? <RecipeSearch profile={currentUser} />
+							: <Redirect to="/login" />
+					}} />
 
 					<Route path="/viewAll" render={() => {
 						return currentUser
