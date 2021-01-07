@@ -6,12 +6,12 @@ import API from '../utils/API'
 const MyRecipes = props => {
 	const [recipes, setRecipes] = useState([])
 	const [favoriteRecipes, setFavoriteRecipes]=useState([])
-	useEffect(()=> {
-		API.myFavorites()
-		.then(results=> {
-			setFavoriteRecipes(curr => [...curr, ...results])
-		})
-	})
+	// useEffect(()=> {
+	// 	API.myFavorites()
+	// 	.then(results=> {
+	// 		setFavoriteRecipes(curr => [...curr, ...results])
+	// 	})
+	// })
 
 	useEffect(() => {
 		API.myRecipes()
@@ -36,8 +36,8 @@ const MyRecipes = props => {
 		recipes.forEach(element => {
 			if (element._id === id) {
 				favoritesList.push(element)
-				setFavoriteRecipes(favoritesList)
-				console.log(favoritesList)
+				// setFavoriteRecipes(favoritesList)
+				// console.log(favoritesList)
 			}
 			
 		})

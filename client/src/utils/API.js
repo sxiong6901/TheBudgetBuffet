@@ -87,15 +87,15 @@ const API = {
 			console.log(serverResponse)
 			return serverResponse.data
 		})
-	},
-	myFavorites: function(recipe){
-		return axios.post(`/api/users/favorites`,recipe)
-		.then((serverResponse) => {	
-			console.log(`response from server`)
-			console.log(serverResponse)
-			return serverResponse.data
-		})
-	},
+	}
+	// myFavorites: function(recipe){
+	// 	return axios.post(`/api/users/favorites`,recipe)
+	// 	.then((serverResponse) => {	
+	// 		console.log(`response from server`)
+	// 		console.log(serverResponse)
+	// 		return serverResponse.data
+	// 	})
+	// },
 }
 axios.defaults.headers.common['token'] = API.getToken()
 

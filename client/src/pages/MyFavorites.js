@@ -18,7 +18,7 @@ const Favorites = props => {
 	return (
 		<>
 			<h1>My Favorites</h1>
-			<button>submit</button>
+			
 			{/* {recipes && recipes.map( recipe => <RecipeCard key={recipe._id} recipe={recipe} />)} */}
 		</>
 	)
