@@ -3,18 +3,32 @@ import RecipeCard2 from '../components/RecipeCard2'
 import API from '../utils/API'
 
 const ViewAll = props => {
+	
 	const [recipes, setRecipes] = useState([])
+	const [favoriteRecipes, setFavoriteRecipes]=useState([])
+
 	useEffect(() => {
 		API.viewRecipe()
 			.then(results => {
 				setRecipes(curr => [...curr, ...results])
 			})
 	}, [])
-
-	// handleChange =({target}) => {
-	// 	const {name, value} = target; 
-	// 	this.setState({ [name]: value});
-	// }
+	
+	const save=(id)=>{
+		console.log(id)	
+		
+		var favoritesList=[]
+		recipes.forEach(element => {
+			if (element._id === id) {
+				favoritesList.push(element)
+				setFavoriteRecipes(favoritesList)
+				console.log(favoritesList)
+			}
+			
+		})
+				
+	
+	  }
 
 
 
@@ -30,7 +44,7 @@ const ViewAll = props => {
        
       
 			{recipes && recipes.map(recipe=>(
-				<RecipeCard2 key= {recipe._id} recipe={recipe}/>
+				<RecipeCard2 key= {recipe._id} recipe={recipe} saveRecipe={save}/>
 			
 			))}
 		</>

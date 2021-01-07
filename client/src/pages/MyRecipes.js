@@ -2,9 +2,17 @@ import React, { useEffect, useState } from 'react'
 import RecipeCard from '../components/RecipeCard'
 import API from '../utils/API'
 
+
 const MyRecipes = props => {
 	const [recipes, setRecipes] = useState([])
 	const [favoriteRecipes, setFavoriteRecipes]=useState([])
+	useEffect(()=> {
+		API.myFavorites()
+		.then(results=> {
+			setFavoriteRecipes(curr => [...curr, ...results])
+		})
+	})
+
 	useEffect(() => {
 		API.myRecipes()
 			.then(results => {
@@ -24,10 +32,16 @@ const MyRecipes = props => {
 	  const save=(id)=>{
 		console.log(id)	
 		
-		var favoritesList = favoriteRecipes.map(recipe=>recipe._id !== id)
-		setFavoriteRecipes(favoritesList)
-		console.log(favoritesList)
-		
+		var favoritesList=[]
+		recipes.forEach(element => {
+			if (element._id === id) {
+				favoritesList.push(element)
+				setFavoriteRecipes(favoritesList)
+				console.log(favoritesList)
+			}
+			
+		})
+				
 	
 	  }
 	
