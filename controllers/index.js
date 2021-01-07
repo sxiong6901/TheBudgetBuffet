@@ -100,23 +100,23 @@ module.exports = {
 		
 		
 	},
-	myFavorites: async(req, res)=>{
-		const token = req.get('token')
-		if(!token){
-			return res.sendStatus('403')
-		}
-		let userProfile = jwtDecode(token)
-		console.log(userProfile)
-		await User.findByIdAndUpdate(
-			userProfile._id,
-			{$push: {recipes: req.body}},
-			{new: true, runValidators: true}
-			).then(function(recipe) {
-			res.json(recipe);
+	// myFavorites: async(req, res)=>{
+	// 	const token = req.get('token')
+	// 	if(!token){
+	// 		return res.sendStatus('403')
+	// 	}
+	// 	let userProfile = jwtDecode(token)
+	// 	console.log(userProfile)
+	// 	await User.findByIdAndUpdate(
+	// 		userProfile._id,
+	// 		{$push: {recipes: req.body}},
+	// 		{new: true, runValidators: true}
+	// 		).then(function(recipe) {
+	// 		res.json(recipe);
 			
-		  });
-		// let doc = await User.find({email: userProfile.email}).lean()		
-	},
+	// 	  });
+	// 	// let doc = await User.find({email: userProfile.email}).lean()		
+	// },
 
 	myRecipes: (req, res)=>{
 		const token = req.get('token')

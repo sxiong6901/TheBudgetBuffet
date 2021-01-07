@@ -10,7 +10,7 @@ import LogOut from './pages/LogOut'
 import SignUp from './pages/SignUp'
 import Home from './pages/home'
 import MyRecipe from './pages/MyRecipes'
-import recipeSearch from './pages/recipeSearch'
+import RecipeSearch from './pages/recipeSearch'
 import Favorites from './pages/MyFavorites'
 
 
@@ -66,6 +66,13 @@ class App extends React.Component {
 
 					<Route path="/createRecipe" component={Recipe} />
 
+					<Route path="/recipeSearch" render={() => {
+						return currentUser
+
+							? <RecipeSearch profile={currentUser} />
+							: <Redirect to="/login" />
+					}} />
+
 					<Route path="/myrecipe" render={() => {
 						return currentUser
 
@@ -73,12 +80,6 @@ class App extends React.Component {
 							: <Redirect to="/login" />
 					}} />
 
-					<Route path="/recipeSearch" render={() => {
-						return currentUser
-
-							? <recipeSearch profile={currentUser} />
-							: <Redirect to="/login" />
-					}} />
 
 					<Route path="/viewAll" render={() => {
 						return currentUser
