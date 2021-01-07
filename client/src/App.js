@@ -10,7 +10,7 @@ import LogOut from './pages/LogOut'
 import SignUp from './pages/SignUp'
 import Home from './pages/home'
 import MyRecipe from './pages/MyRecipes'
-import recipeSearch from './pages/recipeSearch'
+import RecipeSearch from './pages/recipeSearch'
 
 
 
@@ -75,7 +75,7 @@ class App extends React.Component {
 					<Route path="/recipeSearch" render={() => {
 						return currentUser
 
-							? <recipeSearch profile={currentUser} />
+							? <RecipeSearch profile={currentUser} />
 							: <Redirect to="/login" />
 					}} />
 
