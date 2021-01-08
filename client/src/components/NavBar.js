@@ -11,8 +11,7 @@ const NavBar = (props) => {
 					<span>
 						<Link to="/about">About</Link>
 						<Link to="/recipeSearch">Search</Link>
-						<Link to="/createRecipe">Share A Recipe</Link>
-						<Link to="/recipeSearch">Search</Link>
+						<Link to="/createRecipe">Create A Recipe</Link>
 						<Link to="/myrecipe">My Recipes</Link>
 						<Link to="/viewAll">Explore Recipes</Link>
 						<Link to="/favorites">My Favorites</Link>
