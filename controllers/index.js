@@ -100,6 +100,29 @@ module.exports = {
 		
 		
 	},
+	deleteRecipe: async (req, res)=>{
+		const token = req.get('token')
+		if(!token){
+			return res.sendStatus('403')
+		}
+			await db.User
+			  .findById({ _id: req.params.id })
+			  .then(recipe => recipe.deleteRecipe())
+			  .then(recipe => res.json(recipe))
+			  .catch(err => res.status(422).json(err));
+		  
+		// const token = req.get('token')
+		// if(!token){
+		// 	return res.sendStatus('403')
+		// }
+		// const recipes = await User.find({recipes:{$gt: []}},{recipes:1, _id:0})
+
+		// let recpArr = []
+		// recipes.forEach(recipe=>recipe.recipes.forEach(recipeSingular=>recpArr.push(recipeSingular)))
+		// res.json(recpArr)
+		
+		
+	},
 	// myFavorites: async(req, res)=>{
 	// 	const token = req.get('token')
 	// 	if(!token){
