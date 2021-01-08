@@ -89,13 +89,30 @@ const API = {
 		})
 	},
 	deleteRecipe: function(recipe){
-		return axios.delete(`/api/users/myRecipe`,recipe)
+		return axios.delete(`/api/users/myRecipe/:id`)
 		.then((serverResponse) => {	
 			console.log(`response from server`)
 			console.log(serverResponse)
+			console.log(recipe.data)
 			return serverResponse.data
 		})
+	
 	}
+
+	// app.delete("/delete/:id", (req, res) => {
+	// 	db.notes.remove(
+	// 	  {
+	// 		_id: mongojs.ObjectID(req.params.id)
+	// 	  },
+	// 	  (error, data) => {
+	// 		if (error) {
+	// 		  res.send(error);
+	// 		} else {
+	// 		  res.send(data);
+	// 		}
+	// 	  }
+	// 	);
+	//   });
 
 	// myFavorites: function(recipe){
 	// 	return axios.post(`/api/users/favorites`,recipe)

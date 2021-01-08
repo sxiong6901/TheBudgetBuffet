@@ -30,6 +30,7 @@ const MyRecipes = props => {
 		API.myRecipes()
 		  .then(res => 
 			setNewRecipe(res.data)
+			
 		  )
 		  .catch(err => console.log(err));
 	  };
@@ -42,6 +43,8 @@ const MyRecipes = props => {
 		// var newRecipeList = recipes.filter(recipe=>recipe._id !== id)
 		
 		// setRecipes(newRecipeList)
+		// console.log(newRecipeList)
+		
 						
 	  }	 
 
