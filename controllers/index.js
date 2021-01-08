@@ -101,56 +101,28 @@ module.exports = {
 
 	},
 
-	deleteRecipe: async (req, res) => {
-		const token = req.get('token')
-		if (!token) {
-			return res.sendStatus('403')
-		}
-
-		await db.User.find({cn: req.params.id}, function(error, recipe) {
-			var recipe= {'recipe': recipe};
-			if(error){
-				process.stderr.write(error);
-			}
-			
-			Recipe.updateOne( {cn: req.params.id}, { $pullAll: {uid: [req.params.deleteUid] } } )
-			// recipe[0]._recipe.recipes.remove({uid: req.params.deleteUid});
-		}
-		)},
-		// 	{
-		// 		_id: mongojs.ObjectID(req.params.id)
-		// 	},
-		// 	(error, data) => {
-		// 		if (error) {
-		// 			res.send(error);
-		// 		} else {
-		// 			res.send(data);
-		// 		}
-		// 	}
-		// );
-	// },
-
-		// await db.User
-		//   .findByIdAndRemove({ _id: req.params.id })
-		//   console.log(req.params.id)
-		//   .then(recipe => recipe.deleteRecipe())
-		//   .then(recipe => res.json(recipe))
-		//   .catch(err => res.status(422).json(err));
-
-		// const token = req.get('token')
-		// if(!token){
-		// 	return res.sendStatus('403')
-		// }
-		// const recipes = await User.find({recipes:{$gt: []}},{recipes:1, _id:0})
-
-		// let recpArr = []
-		// recipes.forEach(recipe=>recipe.recipes.forEach(recipeSingular=>recpArr.push(recipeSingular)))
-		// res.json(recpArr)
-
-
-
-
-
+	deleteRecipe: (req, res) => {
+		const token = req.get("token");
+		if (!token) return res.sendStatus(403);
+		let userProfile = jwtDecode(token);
+	
+		console.log("User ID: ", userProfile._id);
+		console.log("Recipe ID: ", req.params.id);
+	
+		User.updateOne(
+			{ _id: userProfile._id },
+			{ $pull: { recipes: req.params.id } }
+		)
+		.then(function (error, recipes) {
+			if (error) {
+				res.send(error);
+			  } else {
+				res.send(recipes);
+			  }
+	});
+},
+	
+	
 	// myFavorites: async(req, res)=>{
 	// 	const token = req.get('token')
 	// 	if(!token){
