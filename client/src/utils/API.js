@@ -87,7 +87,41 @@ const API = {
 			console.log(serverResponse)
 			return serverResponse.data
 		})
+	},
+	deleteRecipe: function(recipes){
+		return axios.delete(`/api/users/myRecipe/:id`)
+		.then((serverResponse) => {	
+			console.log(`response from server`)
+			console.log(serverResponse)
+			console.log(recipes.recipes)
+			return serverResponse.recipes
+		})
+	
 	}
+
+	// app.delete("/delete/:id", (req, res) => {
+	// 	db.notes.remove(
+	// 	  {
+	// 		_id: mongojs.ObjectID(req.params.id)
+	// 	  },
+	// 	  (error, data) => {
+	// 		if (error) {
+	// 		  res.send(error);
+	// 		} else {
+	// 		  res.send(data);
+	// 		}
+	// 	  }
+	// 	);
+	//   });
+
+	// myFavorites: function(recipe){
+	// 	return axios.post(`/api/users/favorites`,recipe)
+	// 	.then((serverResponse) => {	
+	// 		console.log(`response from server`)
+	// 		console.log(serverResponse)
+	// 		return serverResponse.data
+	// 	})
+	// },
 }
 axios.defaults.headers.common['token'] = API.getToken()
 

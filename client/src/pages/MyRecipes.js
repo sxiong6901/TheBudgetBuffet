@@ -2,9 +2,18 @@ import React, { useEffect, useState } from 'react'
 import RecipeCard from '../components/RecipeCard'
 import API from '../utils/API'
 
+
 const MyRecipes = props => {
 	const [recipes, setRecipes] = useState([])
+	const [recipe, setNewRecipe] = useState([])
 	const [favoriteRecipes, setFavoriteRecipes]=useState([])
+	// useEffect(()=> {
+	// 	API.myFavorites()
+	// 	.then(results=> {
+	// 		setFavoriteRecipes(curr => [...curr, ...results])
+	// 	})
+	// })
+
 	useEffect(() => {
 		API.myRecipes()
 			.then(results => {
@@ -13,21 +22,45 @@ const MyRecipes = props => {
 			})
 	}, [])
 
+	useEffect(() => {
+		loadRecipe()
+	  }, [])
+
+	  function loadRecipe(id) {
+		API.myRecipes()
+		  .then(res => 
+			setNewRecipe(res.data)
+			
+		  )
+		  .catch(err => console.log(err));
+	  };
+
 	const deleteRecipe=(id)=>{
 		console.log(id)	
-		var newRecipeList = recipes.filter(recipe=>recipe._id !== id)
+		API.deleteRecipe(id)
+      .then(res => loadRecipe())
+      .catch(err => console.log(err));
+		// var newRecipeList = recipes.filter(recipe=>recipe._id !== id)
 		
-		setRecipes(newRecipeList)
+		// setRecipes(newRecipeList)
+		// console.log(newRecipeList)
+		
 						
 	  }	 
 
 	  const save=(id)=>{
 		console.log(id)	
 		
-		var favoritesList = favoriteRecipes.map(recipe=>recipe._id !== id)
-		setFavoriteRecipes(favoritesList)
-		console.log(favoritesList)
-		
+		var favoritesList=[]
+		recipes.forEach(element => {
+			if (element._id === id) {
+				favoritesList.push(element)
+				// setFavoriteRecipes(favoritesList)
+				// console.log(favoritesList)
+			}
+			
+		})
+				
 	
 	  }
 	
