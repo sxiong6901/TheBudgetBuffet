@@ -87,6 +87,10 @@ const API = {
 			console.log(serverResponse)
 			return serverResponse.data
 		})
+	},
+	getRecipes: async function (query) {
+	 const {data} = await axios.post(`/api/users/getrecipes`,{query:query})
+	 return data
 	}
 	// myFavorites: function(recipe){
 	// 	return axios.post(`/api/users/favorites`,recipe)

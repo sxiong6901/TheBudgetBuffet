@@ -1,26 +1,29 @@
 import React, { useEffect, useState } from 'react';
+import API from '../utils/API';
 import Recipes from './Recipes';
 
 const RecipeSearch = () =>  {
 
-    const APP_ID = "be645cb1";
-	const APP_KEY = "8deb2d9e6d9de55f55770f014a7aa365";
+ 
 
 	const [recipes, setRecipes] = useState([]);
 	const [search, setSearch] = useState("");
 	const [ query, setQuery] = useState('')
 
 	useEffect(() =>{
+		const getRecipes = async () => {
+			if(!query) return
+			// const response = await fetch(`https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`);
+			// const data = await response.json();
+			const data = await API.getRecipes()
+			// console.log(data )
+			setRecipes(data.hits);
+			console.log(data.hits);
+	
+		};
 		getRecipes();
 	}, [query]);
 
-    const getRecipes = async () => {
-        const response = await fetch(`https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`);
-		const data = await response.json();
-		setRecipes(data.hits);
-		console.log(data.hits);
-
-	};
 
 	const updateSearch = e => {
 		setSearch(e.target.value);
@@ -47,7 +50,7 @@ const RecipeSearch = () =>  {
          	</form>
 			 {recipes.map(recipe => (
 				 <Recipes
-				 key={recipe.recipe.label}
+				 key={recipe.recipe.uri}
 				 title={recipe.recipe.label}
 				 ingredients={recipe.recipe.ingredients}
 			 />

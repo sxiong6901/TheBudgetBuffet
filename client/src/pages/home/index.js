@@ -1,21 +1,8 @@
-import React, {useState} from 'react'
-import Card from '../../components/Card'
-import vipImage from './vip.png'
-import API from '../../utils/API'
+import React from 'react'
+
 
 
 const Home = ({profile}) => {
-
-	const [joke, setJoke] = useState("")
-	const [password, setPassword] = useState("")
-
-	const handleClick = (token) => {
-		API.getSecret(token).then(result => {
-			console.log(result)
-			if (result.data[0].joke) setJoke(result.data[0].joke)
-			if (result.data[0].password) setPassword(result.data[0].password)
-		})
-	}
 	return (
 		<div className='VIP'>
 		  <div className='row'>

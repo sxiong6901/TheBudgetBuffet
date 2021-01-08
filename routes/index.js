@@ -21,6 +21,8 @@ usersRouter.route('/view').get(usersCtrl.viewRecipe)
 
 usersRouter.route('/myRecipe').get(usersCtrl.myRecipes)
 
+usersRouter.route('/getrecipes').post(usersCtrl.getRecipes)
+
 usersRouter.route('/secret').get(usersCtrl.show)
 
 usersRouter.route('/:id').patch(usersCtrl.update)

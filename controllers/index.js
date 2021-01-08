@@ -2,7 +2,7 @@ const jwtDecode = require('jwt-decode')
 const User = 	  require('../models/User.js')
 const jokes = 	  require('../data')
 const signToken = require('../auth').signToken
-
+const axios = require('axios')
 module.exports = {
 	// list all users
 	index: (req, res) => {
@@ -99,6 +99,17 @@ module.exports = {
 		res.json(recpArr)
 		
 		
+	},
+	getRecipes:async (req, res)=>{
+		console.log(req.body)
+		const recipes = await axios.get(`https://api.edamam.com/search?q=${req.body.query}&app_id=${process.env.APP_ID}&app_key=${process.env.APP_KEY}`);
+		console.log(recipes.data)
+		console.log(req.body)
+		res.json(recipes.data)
+	},
+
+	deleteRecipe: async(req, res)=>{
+
 	},
 	// myFavorites: async(req, res)=>{
 	// 	const token = req.get('token')

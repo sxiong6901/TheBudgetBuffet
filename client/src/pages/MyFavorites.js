@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react'
-import RecipeCard from '../components/RecipeCard'
-import API from '../utils/API'
+import React from 'react'
+// import RecipeCard from '../components/RecipeCard'
+// import API from '../utils/API'
 
 const Favorites = props => {
 
