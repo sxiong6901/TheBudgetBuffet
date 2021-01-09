@@ -35,9 +35,9 @@ const MyRecipes = props => {
 			.catch(err => console.log(err));
 	};
 
-	const deleteRecipe = (id) => {
+	const updateRecipe = (id) => {
 		console.log(id)
-		API.deleteRecipe(id)
+		API.updateRecipe(id)
 			.then(res => loadRecipe(res))
 			.catch(err => console.log(err));
 		var newRecipeList = recipes.filter(recipe => recipe._id !== id)
@@ -68,7 +68,7 @@ const MyRecipes = props => {
 		<>
 			<h1>My Recipes</h1>
 
-			{recipes && recipes.map(recipe => <RecipeCard key={recipe._id} recipe={recipe} removeRecipe={deleteRecipe} saveRecipe={save}></RecipeCard>)}
+			{recipes && recipes.map(recipe => <RecipeCard key={recipe._id} recipe={recipe} removeRecipe={updateRecipe} saveRecipe={save}></RecipeCard>)}
 		</>
 	)
 }

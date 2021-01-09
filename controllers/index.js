@@ -101,41 +101,48 @@ module.exports = {
 
 	},
 
-	deleteRecipe: async (req, res) => {
+	updateRecipe: (req, res) => {
 		const token = req.get("token");
 		if (!token) return res.sendStatus(403);
 		let userProfile = jwtDecode(token);
-	
+
 		console.log("User ID: ", userProfile._id);
 		console.log("Recipe ID: ", req.params.id);
 		console.log("Req.Params:", req.params)
+		
 
-	// await User.findById(userProfile._id)
+		User
+		       .findOneAndUpdate({ _id: req.params.id }, req.body)
+			//   .then(dbModel=>  dbModel=recipes.filter(recipe=>recipe._id !== id))
+			  .then(dbModel => res.json(dbModel))
+			  .catch(err => res.status(422).json(err));
+		  
+		
+		
+	},
 
-	
-		await User.findById({ _id: req.params.id })
-		  .then(dbModel => dbModel.deleteRecipe())
-		  .then(dbModel => res.json(dbModel))
-		  .catch(err => res.status(422).json(err));
-	  },
+	// await User.findById({ id: req.params.id })
+		// 	.then(dbModel => dbModel.updateRecipe())
+		// 	.then(dbModel => res.json(dbModel))
+		// 	.catch(err => res.status(422).json(err));
 
 	// User.findOneandUpdate(
-    //         { _id: userProfile._id },
+	//         { _id: userProfile._id },
 	// 		{ $pull: { recipes: req.params.id } },
 	// 		{new: true}
-    //     )
+	//     )
 	// 	.then(function (error, recipes) {
 	// 		if (error) {
 	// 			res.send(error);
 	// 		  } else {
 	// 			var newRecipeList=recipes.filter(recipe=>recipe._id !== id)
 	// 			return newRecipeList
-				
+
 	// 		  }
 	// });
 
-	
-	
+
+
 	// myFavorites: async(req, res)=>{
 	// 	const token = req.get('token')
 	// 	if(!token){

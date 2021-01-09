@@ -88,8 +88,8 @@ const API = {
 			return serverResponse.data
 		})
 	},
-	deleteRecipe: function(recipeId){
-		return axios.delete(`/api/users/myRecipe/${recipeId}`)
+	updateRecipe: function(recipeId){
+		return axios.put(`/api/users/myRecipe/${recipeId}`)
 		.then((serverResponse) => {	
 			console.log(`response from server`)
 			console.log(serverResponse)
