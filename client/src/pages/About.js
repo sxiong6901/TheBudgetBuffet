@@ -75,7 +75,9 @@ return (
 		<i className= "fa fa-utensils" aria-hidden="true"/>
 	<hr/>
 	<div className="about-tips"></div>
+	</div>
 	</Col>
+	
 		  <a
 			className="App-link"
 			href="https://reactjs.org"
@@ -87,6 +89,8 @@ return (
 		 
 		   
 		   </div>
+		   
+		   
 
 )
 }
