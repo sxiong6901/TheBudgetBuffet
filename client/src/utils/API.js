@@ -88,31 +88,16 @@ const API = {
 			return serverResponse.data
 		})
 	},
-	deleteRecipe: function(recipes){
-		return axios.delete(`/api/users/myRecipe/:id`)
+	deleteRecipe: function(recipeId){
+		return axios.delete(`/api/users/myRecipe/${recipeId}`)
 		.then((serverResponse) => {	
 			console.log(`response from server`)
 			console.log(serverResponse)
-			console.log(recipes.recipes)
-			return serverResponse.recipes
+			// console.log(recipe.recipe)
+			return serverResponse.recipeId
 		})
 	
-	}
-
-	// app.delete("/delete/:id", (req, res) => {
-	// 	db.notes.remove(
-	// 	  {
-	// 		_id: mongojs.ObjectID(req.params.id)
-	// 	  },
-	// 	  (error, data) => {
-	// 		if (error) {
-	// 		  res.send(error);
-	// 		} else {
-	// 		  res.send(data);
-	// 		}
-	// 	  }
-	// 	);
-	//   });
+	}	
 
 	// myFavorites: function(recipe){
 	// 	return axios.post(`/api/users/favorites`,recipe)
