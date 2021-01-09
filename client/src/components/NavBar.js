@@ -4,7 +4,10 @@ import { Link } from 'react-router-dom'
 const NavBar = (props) => {
 	return (
 		<div className='NavBar'>
-			<Link to="/home">Home</Link>
+
+			
+			<Link to="/home">Home< i className= "fas fa-home"/>
+			</Link>
 
 			{props.currentUser
 				? (
