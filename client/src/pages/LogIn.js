@@ -1,5 +1,7 @@
 import React from 'react'
 import API from '../utils/API'
+import cooking from '../images/cookingbackground.jpg'
+import './LogIn.css'
 
 class LogIn extends React.Component {
 	state = {
@@ -30,6 +32,7 @@ class LogIn extends React.Component {
 		const { email, password } = this.state.fields
 		return (
 			<div className='LogIn'>
+				<div styles={{backgroundImage:`url(${cooking})`}}>
 				<div className='row'>
 					<div className='column column-33 column-offset-33'>
 						<h1>Log In</h1>
@@ -53,6 +56,7 @@ class LogIn extends React.Component {
 						
 					</div>
 				</div>
+			</div>
 			</div>
 		)
 	}
