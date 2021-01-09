@@ -97,7 +97,10 @@ const API = {
 			return serverResponse.recipeId
 		})
 	
-	}	
+	},
+	// saveRecipe: function(recipe) {
+	// 	return axios.post("/api/users/favorites", recipe);
+	//   }	
 
 	// myFavorites: function(recipe){
 	// 	return axios.post(`/api/users/favorites`,recipe)
