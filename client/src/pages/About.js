@@ -1,10 +1,10 @@
 import React from 'react'
-import { Component } from 'react';
+// import { Component } from 'react';
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 import Container from 'react-bootstrap/Container'
 import mealplanning from ".././images/mealplanning.jpg";
-import FontAwesome from 'react-fontawesome'
+// import FontAwesome from 'react-fontawesome'
 
 
 
@@ -49,7 +49,7 @@ return (
 			<p style={{fontSize: "25px", width: "75%", margin: "auto", paddingTop: "1em"}}>
 				Designed with you in mind. 
 				Learn how to plan meals on a budget so that you can save money and waste less food.
-				Commit to a Healthier you! </p> */}
+				Commit to a Healthier you! </p> 
 				<hr/>
 
 			{/* <h3>Meal Planning Tips
