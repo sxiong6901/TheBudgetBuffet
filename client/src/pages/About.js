@@ -1,19 +1,21 @@
 import React from 'react'
 
 import { Component } from 'react';
-// import {Container, Row, Col} from "react-bootstrap";
+import Col from 'react-bootstrap/Col'
+import Row from 'react-bootstrap/Row'
+import Container from 'react-bootstrap/Container'
 import mealplanning from ".././images/mealplanning.jpg";
 
 
 const About = ({profile}) => {
 	
-	class About extends Component {
-	// render (){
+	
 return (
 
 	<div className="about-page">
-<Container>
+
   <Row>
+  <Container>
     <Col>
 	<h2>About Budget Buffet</h2>
 	<img src={mealplanning}
@@ -26,7 +28,9 @@ return (
 				Commit to a Healthier you! </p>
 		
 	</Col>
+	</Container>
 	</Row>
+
     <Col>
 
 		<div className="about">
@@ -81,10 +85,10 @@ return (
   
 		  </a>
 		 
-		   </Container>
+		   
 		   </div>
 
 )
 }
-	}}
+	
 export default About
