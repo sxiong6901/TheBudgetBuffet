@@ -49,7 +49,7 @@ return (
 	src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgkdMS2BOJ2myuVN9QpLWtdzIdG3nvE1FR0A&usqp=CAU"
 	alt="Third Slide"/>
     <Carousel.Caption>
-      <p style={{fontFamily: "Kufam", fontColor: "black", fontSize: "45px", width: "75%", margin: "auto", paddingTop: "1em", align: "center"}}></p>
+      <p style={{fontFamily: "Kufam", fontColor: "#000", fontSize: "65px", width: "75%", margin: "auto", paddingTop: "1em", align: "center"}}></p>
       <p>Commit to a healtier you</p>
     </Carousel.Caption>
   </Carousel.Item>
@@ -65,9 +65,7 @@ return (
 	<hr/>
 	<div className="about-tips"></div>
 	</div>
-	
-	
-		  <a
+			  <a
 			className="App-link"
 			href="https://reactjs.org"
 			target="_blank"
