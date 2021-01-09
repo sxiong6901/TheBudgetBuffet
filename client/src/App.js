@@ -14,8 +14,6 @@ import RecipeSearch from './pages/recipeSearch'
 import Favorites from './pages/MyFavorites'
 
 
-
-
 class App extends React.Component {
 	state = { currentUser: API.getCurrentUser() }
 

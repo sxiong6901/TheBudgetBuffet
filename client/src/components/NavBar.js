@@ -1,40 +1,26 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Nav, Navbar } from 'react-bootstrap';
+import Navbar from 'react-bootstrap/Navbar'
 
 const NavBar = (props) => {
 	return (
+		<div className='NavBar'>
 
-		<Nav activeKey="/home"
-		onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
-	  >
-
-  <Navbar bg="light" variant="light">
-    <Navbar.Brand to="/home">Home</Navbar.Brand>
-    <Nav className="mr-auto">
 			
-		
+			<Link to="/home">Home< i className= "fas fa-home"/>
+			</Link>
+
 			{props.currentUser
 				? (
-					<div>
-
-					
-						<Nav.Link to="/about">About</Nav.Link>
-						<Nav.Link to="/recipeSearch">Search</Nav.Link>
-						<Nav.Link to="/createRecipe">Create A Recipe</Nav.Link>
-						<Nav.Link to="/myrecipe">My Recipes</Nav.Link>
-						<Nav.Link to="/viewAll">Explore Recipes</Nav.Link>
-						<Nav.Link to="/favorites">My Favorites</Nav.Link>
-						<Nav.Link to="/logout">Log Out</Nav.Link>
-						</div>
-		
-				)
-				:
-				</Nav>
-				</Navbar>				
-		</Nav>
-		
-						
+					<span>
+						<Link to="/about">About</Link>
+						<Link to="/recipeSearch">Search</Link>
+						<Link to="/createRecipe">Create A Recipe</Link>
+						<Link to="/myrecipe">My Recipes</Link>
+						<Link to="/viewAll">Explore Recipes</Link>
+						<Link to="/favorites">My Favorites</Link>
+						<Link to="/logout">Log Out</Link>
+					</span>
 				)
 				: (
 					<span>
@@ -42,8 +28,9 @@ const NavBar = (props) => {
 						<Link to="/signup">Sign Up</Link>
 					</span>
 				)
-			
-		
+			}
+		</div>
+	)
+}
 
-		
 export default NavBar
