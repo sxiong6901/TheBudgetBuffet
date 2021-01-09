@@ -29,16 +29,6 @@ const Home = ({profile}) => {
     				</p>
 				</div>			 */}
 					<img src="BudgetPlanning.png" className="App-logo" alt="logo" />
-		  <p> 
-			<input type="text" placeholder="Search.." name="search"></input>
-			<button type="submit"><i className="fa fa-search">Search</i></button>
-		  </p>
-			
-				{/* <button onClick={() => handleClick(profile.token)}>Get Secret Joke</button>
-				{joke ? <Card
-						password = {password}
-					// 	joke = {joke}			   */}
-				
 		   </div>
 		  </div>
 		</div>
