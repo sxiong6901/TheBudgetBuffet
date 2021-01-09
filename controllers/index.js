@@ -108,6 +108,7 @@ module.exports = {
 	
 		console.log("User ID: ", userProfile._id);
 		console.log("Recipe ID: ", req.params.id);
+		console.log("Req.Params:", req.params)
 	
 		User.updateOne(
 			{ _id: userProfile._id },
@@ -117,7 +118,7 @@ module.exports = {
 			if (error) {
 				res.send(error);
 			  } else {
-				res.send(recipes);
+				res.json(recipes);
 			  }
 	});
 },

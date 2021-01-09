@@ -37,26 +37,11 @@ return (
 
 
 		<div>
-		{/* <Container>
-  <Row>
-    <Col sm={8}>sm=8</Col>
-	test
-    <Col sm={4}>sm=4</Col>
-  </Row>
-  <Row>
-    <Col sm>sm=true</Col>
-    <Col sm>sm=true</Col>
-    <Col sm>sm=true</Col>
-  </Row>
-</Container> */}
+
 <container>
 			<h3>About Budget Buffet</h3>
 			</container>
-			<Row>
-    <Col sm={8} style={{color:"yellow"}}>sm=8</Col>
-test
-    <Col sm={4}>sm=4</Col>
-  </Row>
+	
 
   
 			<p style={{fontSize: "25px", width: "75%", margin: "auto", paddingTop: "1em"}}>
@@ -65,9 +50,9 @@ test
 				Commit to a Healthier you! </p>
 				<hr/>
 
-			<h3>Meal Planning Tips
+			{/* <h3>Meal Planning Tips
 				<i className= "fa fa-utensils" aria-hidden="true"/>
-			</h3>
+			</h3> */}
 
 
 			
