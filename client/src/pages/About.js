@@ -1,10 +1,10 @@
 import React from 'react'
-
-import { Component } from 'react';
+// import { Component } from 'react';
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 import Container from 'react-bootstrap/Container'
 import mealplanning from ".././images/mealplanning.jpg";
+<<<<<<< HEAD
 import mealschedule2 from ".././images/mealschedule2.jpg";
 import healthieryou3 from ".././images/healthieryou3.jpg";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -13,6 +13,10 @@ import { fab } from '@fortawesome/free-brands-svg-icons'
 import { fas, faUtensils } from '@fortawesome/free-solid-svg-icons'
 import "./../styles.css";
 import Carousel from 'react-bootstrap/Carousel'
+=======
+// import FontAwesome from 'react-fontawesome'
+
+>>>>>>> 6209a02f3ceea874c17e924bae924f5c28a00722
 
 library.add(fab, fas, faUtensils)
 
@@ -67,6 +71,40 @@ return (
 		<div className="about">
 
 
+<<<<<<< HEAD
+=======
+		<div>
+
+<container>
+			<h3>About Budget Buffet</h3>
+			</container>
+	
+
+  
+
+			<p style={{fontSize: "25px", width: "75%", margin: "auto", paddingTop: "1em"}}>
+				Designed with you in mind. 
+				Learn how to plan meals on a budget so that you can save money and waste less food.
+				Commit to a Healthier you! </p> 
+				<hr/>
+
+			{/* <h3>Meal Planning Tips
+				<i className= "fa fa-utensils" aria-hidden="true"/>
+
+			</h3>
+			<p></p>
+
+			</h3> */}
+
+
+
+			
+			
+			</div>
+  
+			 
+
+>>>>>>> 6209a02f3ceea874c17e924bae924f5c28a00722
 	
 	<h2>Meal Planning Tips
 	<FontAwesomeIcon icon="utensils" /></h2>

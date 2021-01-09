@@ -101,28 +101,35 @@ module.exports = {
 
 	},
 
-	deleteRecipe: (req, res) => {
+	updateRecipe: async (req, res) => {
 		const token = req.get("token");
 		if (!token) return res.sendStatus(403);
 		let userProfile = jwtDecode(token);
-	
+
 		console.log("User ID: ", userProfile._id);
 		console.log("Recipe ID: ", req.params.id);
+		console.log("Req.Params:", req.params)
+		
+
+		const user = await User.findById(userProfile._id)
+		const recipes=user.recipes.filter(recipe=>`${recipe._id}` !== req.params.id)
+		user.recipes=recipes
+		await user.save()
+		res.json(user)
+		
+		
+		const newUser=await User
+			   .findOneAndUpdate({ _id: req.params.id },{recipes},{new: true})
+			   console.log({newUser})
+		
+		 
+		
+	},
+
 	
-		User.updateOne(
-			{ _id: userProfile._id },
-			{ $pull: { recipes: req.params.id } }
-		)
-		.then(function (error, recipes) {
-			if (error) {
-				res.send(error);
-			  } else {
-				res.send(recipes);
-			  }
-	});
-},
-	
-	
+
+
+
 	// myFavorites: async(req, res)=>{
 	// 	const token = req.get('token')
 	// 	if(!token){
