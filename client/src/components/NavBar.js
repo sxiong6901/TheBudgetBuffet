@@ -1,26 +1,44 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-
+import { Nav } from 'react-bootstrap';
 
 const NavBar = (props) => {
 	return (
-		<div className='NavBar'>
+		<Nav activeKey="/home"
+		onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
+	  >>
 
-			
-			<Link to="/home">Home< i className= "fas fa-home"/>
-			</Link>
-
+		<Nav.Item>	
+			<Nav.Link to="/home">Home</Nav.Link>
+		</Nav.Item>
 			{props.currentUser
 				? (
-					<span>
-						<Link to="/about">About</Link>
-						<Link to="/recipeSearch">Search</Link>
-						<Link to="/createRecipe">Create A Recipe</Link>
-						<Link to="/myrecipe">My Recipes</Link>
-						<Link to="/viewAll">Explore Recipes</Link>
-						<Link to="/favorites">My Favorites</Link>
-						<Link to="/logout">Log Out</Link>
-					</span>
+					<div>
+					<Nav.Item>
+						<Nav.Link to="/about">About
+						</Nav.Link>
+					</Nav.Item>
+					<Nav.Item>
+						<Nav.Link to="/recipeSearch">Search</Nav.Link>
+					</Nav.Item>
+					<Nav.Item>
+						<Nav.Link to="/createRecipe">Create A Recipe</Nav.Link>
+					</Nav.Item>
+					<Nav.Item>
+						<Nav.Link to="/myrecipe">My Recipes</Nav.Link>
+					</Nav.Item>
+					<Nav.Item>
+						<Nav.Link to="/viewAll">Explore Recipes</Nav.Link>
+					</Nav.Item>
+					<Nav.Item>
+						<Nav.Link to="/favorites">My Favorites</Nav.Link>
+					</Nav.Item>
+					<Nav.Item>
+						<Nav.Link to="/logout">Log Out</Nav.Link>
+					</Nav.Item>
+					
+					</div>	
+					
 				)
 				: (
 					<span>
@@ -29,8 +47,7 @@ const NavBar = (props) => {
 					</span>
 				)
 			}
-		</div>
-	)
-}
-
+		</Nav>
+)
+		}
 export default NavBar
