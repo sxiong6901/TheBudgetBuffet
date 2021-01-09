@@ -38,7 +38,7 @@ const MyRecipes = props => {
 	const deleteRecipe=(id)=>{
 		console.log(id)	
 		API.deleteRecipe(id)
-      .then(res => loadRecipe())
+      .then(res => loadRecipe(res))
       .catch(err => console.log(err));
 		// var newRecipeList = recipes.filter(recipe=>recipe._id !== id)
 		
