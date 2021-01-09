@@ -1,14 +1,16 @@
 import React from 'react'
 // import {Container} from "react-bootstrap";
+// import 'bootstrap/dist/css/bootstrap.min.css';
+import Col from 'react-bootstrap/Col'
+import Row from 'react-bootstrap/Row'
+
+// or less ideally
 
 
 const About = ({profile}) => {
 	
 return (
 		<div className="about">
-
-
-
 
 
 		<div>
@@ -24,7 +26,16 @@ return (
     <Col sm>sm=true</Col>
   </Row>
 </Container> */}
+<container>
 			<h3>About Budget Buffet</h3>
+			</container>
+			<Row>
+    <Col sm={8} style={{color:"yellow"}}>sm=8</Col>
+test
+    <Col sm={4}>sm=4</Col>
+  </Row>
+
+  
 			<p style={{fontSize: "25px", width: "75%", margin: "auto", paddingTop: "1em"}}>
 				Designed with you in mind. 
 				Learn how to plan meals on a budget so that you can save money and waste less food.
