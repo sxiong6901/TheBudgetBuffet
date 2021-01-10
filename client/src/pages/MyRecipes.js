@@ -72,11 +72,11 @@ const MyRecipes = props => {
 
 			{recipes && recipes.map(recipe => <RecipeCard key={recipe._id} recipe={recipe} removeRecipe={updateRecipe} saveRecipe={save}></RecipeCard>)}
 			
-	
+	<div className="recipe-cards">
 			<CardGroup>
   <Card>
     <Card.Img variant="top" src="https://tmbidigitalassetsazure.blob.core.windows.net/rms3-prod/attachments/37/1200x1200/exps71319_TH153343B04_21_9b.jpg" />
-    <Card.Body>
+    <Card.Body style={{opacity: "0.5"}}>
       <Card.Title style={{fontSize: "25px", fontFamily: "Arial"}}>Recipe 1: Cheesy Onion Chicken Skillet</Card.Title>
       <Card.Text style={{fontSize: "15px", fontFamily: "Arial"}}>
         Ingredients: onion, chicken, green bell peppers.
@@ -103,6 +103,7 @@ const MyRecipes = props => {
     </Card.Body>
       </Card>
 </CardGroup>
+</div>
 </div>
 	)
 }
