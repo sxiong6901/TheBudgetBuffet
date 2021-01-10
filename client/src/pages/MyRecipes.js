@@ -58,50 +58,10 @@ const MyRecipes = props => {
 
 			{recipes && recipes.map(recipe => <RecipeCard key={recipe._id} recipe={recipe} removeRecipe={deleteRecipe} saveRecipe={save}></RecipeCard>)}
 
-
-			
-			
-	
-			<CardGroup>
-  <Card>
-    <Card.Img variant="top" src="https://tmbidigitalassetsazure.blob.core.windows.net/rms3-prod/attachments/37/1200x1200/exps71319_TH153343B04_21_9b.jpg" />
-    <Card.Body>
-      <Card.Title style={{fontSize: "25px", fontFamily: "Arial"}}>Recipe 1: Cheesy Onion Chicken Skillet</Card.Title>
-      <Card.Text style={{fontSize: "15px", fontFamily: "Arial"}}>
-        Ingredients: onion, chicken, green bell peppers.
-      </Card.Text>
-    </Card.Body>
-  
-  </Card>
-  <Card>
-    <Card.Img variant="top" src="https://hips.hearstapps.com/del.h-cdn.co/assets/18/01/1514931389-1453936103-delish-turkey-ragu-1.jpg" />
-    <Card.Body>
-      <Card.Title style={{fontSize: "25px", fontFamily: "Arial"}}>Recipe 2: Ground Turkey Spaghetti</Card.Title>
-      <Card.Text style={{fontSize: "15px", fontFamily: "Arial"}}>
-	  Ingredients: ground turkey, spaghetti, onion.
-      </Card.Text>
-    </Card.Body>
-      </Card>
-  <Card>
-    <Card.Img variant="top" src="https://thecozycook.com/wp-content/uploads/2018/01/Baked-Potato-Slices-1-1.jpg" />
-    <Card.Body>
-      <Card.Title style={{fontSize: "25px", fontFamily: "Arial"}}>Recipe 3:Baked Potatoe Slices</Card.Title>
-      <Card.Text style={{fontSize: "15px", fontFamily: "Arial"}} >
-	  Ingredients: russet potatoes, olive oil, cheese.
-      </Card.Text>
-    </Card.Body>
-      </Card>
-</CardGroup>
 </div>
 	)
 }
 
-		</>
-	)
-}
-
-
-	}
 
 
 export default MyRecipes
