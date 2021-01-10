@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 const RecipeCard2 =props => {
     return (
 
@@ -7,8 +8,8 @@ const RecipeCard2 =props => {
 
         <div className="card"  style={{ "width": "22rem" }}>
             <div className="card-body">
-            <span onClick={()=>props.saveRecipe(props.recipe._id)} className="save">Save To Favorites</span>
-            
+            {/* <span onClick={()=>props.saveRecipe(props.recipe._id)} className="save">Save To Favorites</span> */}
+           
                 <h4 className="card-title">{props.recipe.title}</h4>
                 <h5 className="card-subtitle mb-2 text-muted">Ingredients:</h5>
                 <ul>
