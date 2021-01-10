@@ -12,7 +12,7 @@ import { fab } from '@fortawesome/free-brands-svg-icons'
 import { fas, faUtensils } from '@fortawesome/free-solid-svg-icons'
 import "./../styles.css";
 import Carousel from 'react-bootstrap/Carousel'
-import Image from 'react-bootstrap/Image'
+import ListGroup from 'react-bootstrap/ListGroup'
 
 library.add(fab, fas, faUtensils)
 
@@ -64,6 +64,12 @@ return (
 		<i className= "fas fa-utensils" aria-hidden="true"/>
 	<hr/>
 	<div className="about-tips"></div>
+	<ListGroup variant="flush">
+  <ListGroup.Item>Get Organized</ListGroup.Item>
+  <ListGroup.Item>Shop with a </ListGroup.Item>
+  <ListGroup.Item>Batch Cook</ListGroup.Item>
+  <ListGroup.Item>Freeze Leftovers</ListGroup.Item>
+</ListGroup>
 	</div>
 			  <a
 			className="App-link"
