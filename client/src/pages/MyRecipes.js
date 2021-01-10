@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from 'react'
-// import { myRecipes, myFavorites } from '../../../controllers'
 import RecipeCard from '../components/RecipeCard'
 import API from '../utils/API'
 
 
 const MyRecipes = props => {
 	const [recipes, setRecipes] = useState([])
-	const [recipe, setNewRecipe] = useState([])
-	// const [favoriteRecipes, setFavoriteRecipes] = useState([])
+	const [favoriteRecipes, setFavoriteRecipes] = useState([])
 	// useEffect(()=> {
 	// 	API.myFavorites()
 	// 	.then(results=> {
@@ -23,56 +21,42 @@ const MyRecipes = props => {
 			})
 	}, [])
 
-	useEffect(() => {
-		loadRecipe()
-	}, [])
-
-	function loadRecipe(id) {
-		API.myRecipes()
-			.then(res =>
-				setNewRecipe(res.data)
-
-			)
-			.catch(err => console.log(err));
-	};
-
-	const updateRecipe = (id) => {
+	const deleteRecipe = (id) => {
 		console.log(id)
-		API.updateRecipe(id)
-			.then(res => loadRecipe(res))
-			.catch(err => console.log(err));
+		if (window.confirm('Are you sure you want to delete?')) {
+
+		}
 		var newRecipeList = recipes.filter(recipe => recipe._id !== id)
+
 		setRecipes(newRecipeList)
-		console.log(newRecipeList)
-
-
-	// }
-
-	
-	// const myFavorites = (id) => {
-	// 	console.log(id)
-	// 	API.myRecipe(id)
-	// 		.then(res => loadRecipe(res))
-	// 		.catch(err => console.log(err));
-	// 		console.log(recipe)
-		// var myfavorites = recipes.push(recipe => recipe._id !== id)
-		// setRecipes(myfavorites)
-		// console.log(myfavorites)
-
 
 	}
 
+	const save = (id) => {
+		console.log(id)
 
-	
+		var favoritesList = []
+		recipes.forEach(element => {
+			if (element._id === id) {
+				favoritesList.push(element)
+				setFavoriteRecipes(favoritesList)
+				console.log(favoritesList)
+			}
+
+		})
+
+
+	}
 
 
 	return (
 		<>
 			<h1>My Recipes</h1>
+			<p>Create a recipe, save for future use and share with friends</p>
 
-			{recipes && recipes.map(recipe => <RecipeCard key={recipe._id} recipe={recipe} removeRecipe={updateRecipe}></RecipeCard>)}
+			{recipes && recipes.map(recipe => <RecipeCard key={recipe._id} recipe={recipe} removeRecipe={deleteRecipe} saveRecipe={save}></RecipeCard>)}
 		</>
 	)
+}
 
-	}
 export default MyRecipes

@@ -5,16 +5,20 @@ import API from '../utils/API'
 const ViewAll = props => {
 	const [recipes, setRecipes] = useState([])
 	const [favoriteRecipes, setFavoriteRecipes] = useState([])
-	const [term, setTerm] = useState("")
-	const handleSearch = term => {
-		console.log(term)
-		console.log(recipes)
-		const filteredList = recipes.filter(recipes => recipes.title.toLowerCase().includes(term.toLowerCase()))
-		console.log(filteredList)
-		// props.update(filteredList)
-		setTerm(term)
-	}
+	const [term, setTerm] = useState([])
+	// const [filteredList, setList]= useState([])
+	// const [search, setSearch] = useState("");
+	
 
+	// const handleSearch = term => {
+	// 	console.log(term)
+		// console.log(recipes)
+	// 	const filteredList = recipes.filter(recipes => recipes.title.toLowerCase().includes(term.toLowerCase()))
+	// 	console.log(filteredList)
+	// 	setTerm(term)
+	// }
+	// setList({filteredList})
+	// console.log(filteredList)
 
 	useEffect(() => {
 		API.viewRecipe()
@@ -49,7 +53,8 @@ const ViewAll = props => {
 		<button type="submit"><i className="fa fa-search">Search</i></button></p>
 			
         </container> */}
-			<div className="form-group">
+		<h2>Explore Recipes Created By Other Users</h2>
+			{/* <div className="form-group">
 				<input
 					onChange={e => handleSearch(e.target.value)}
 					value={term}
@@ -59,11 +64,12 @@ const ViewAll = props => {
 					placeholder="Search for a recipe"
 					id="search"
 				/>
-			</div>
+						
+			</div> */}
 
 
 			{recipes && recipes.map(recipe => (
-				<RecipeCard2 key={recipe._id} recipe={recipe} saveRecipe={save}/>
+				<RecipeCard2 key={recipe._id} recipe={recipe} saveRecipe={save}  />
 
 			))}
 		</>
