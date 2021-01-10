@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+// import { myRecipes, myFavorites } from '../../../controllers'
 import RecipeCard from '../components/RecipeCard'
 import API from '../utils/API'
 import Card from 'react-bootstrap/Card'
@@ -7,7 +8,7 @@ import CardGroup from 'react-bootstrap/CardGroup'
 const MyRecipes = props => {
 	const [recipes, setRecipes] = useState([])
 	const [recipe, setNewRecipe] = useState([])
-	const [favoriteRecipes, setFavoriteRecipes] = useState([])
+	// const [favoriteRecipes, setFavoriteRecipes] = useState([])
 	// useEffect(()=> {
 	// 	API.myFavorites()
 	// 	.then(results=> {
@@ -46,23 +47,24 @@ const MyRecipes = props => {
 		console.log(newRecipeList)
 
 
-	}
+	// }
 
-	const save = (id) => {
-		console.log(id)
-
-		var favoritesList = []
-		recipes.forEach(element => {
-			if (element._id === id) {
-				favoritesList.push(element)
-				// setFavoriteRecipes(favoritesList)
-				// console.log(favoritesList)
-			}
-
-		})
+	
+	// const myFavorites = (id) => {
+	// 	console.log(id)
+	// 	API.myRecipe(id)
+	// 		.then(res => loadRecipe(res))
+	// 		.catch(err => console.log(err));
+	// 		console.log(recipe)
+		// var myfavorites = recipes.push(recipe => recipe._id !== id)
+		// setRecipes(myfavorites)
+		// console.log(myfavorites)
 
 
 	}
+
+
+	
 
 
 	return (
