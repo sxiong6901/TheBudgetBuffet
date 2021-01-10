@@ -12,3 +12,6 @@ git clone https://github.com/sxiong6901/TheBudgetBuffet.git
 cd to folder
 npm install
 npm run start
+
+
+# About The Budget Buffet:
