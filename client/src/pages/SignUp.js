@@ -1,5 +1,6 @@
 import React from 'react'
 import API from '../utils/API'
+import logo from '../images/doggo.gif'
 
 // sign up form behaves almost identically to log in form. We could create a flexible Form component to use for both actions, but for now we'll separate the two:
 class SignUp extends React.Component {
@@ -33,7 +34,10 @@ class SignUp extends React.Component {
 			<div className='SignUp'>
 				<div className='row'>
 					<div className='column column-33 column-offset-33'>
-						<h1>Sign Up</h1>
+						<h1 style={{backgroundColor: "lightblue"}}>Sign Up</h1>
+						<img src={logo}
+						alt= "doggo"
+						style={{height: "300px"}}></img>
 						<form onSubmit={this.onFormSubmit.bind(this)}>
 							<input 
 								type="text" 
