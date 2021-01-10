@@ -126,8 +126,6 @@ module.exports = {
 		
 	},
 
-	
-
 
 
 	// myFavorites: async(req, res)=>{
