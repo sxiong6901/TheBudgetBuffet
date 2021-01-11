@@ -56,12 +56,13 @@ const MyRecipes = props => {
 			<h1>My Recipes</h1>
 			<p>Create a recipe, save for future use and share with friends</p>
 
+
 			{recipes && recipes.map(recipe => <RecipeCard key={recipe._id} recipe={recipe} removeRecipe={deleteRecipe} saveRecipe={save}></RecipeCard>)}
 
+
+</div>
 </div>
 	)
 }
-
-
 
 export default MyRecipes
