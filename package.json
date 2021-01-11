@@ -43,5 +43,14 @@
     "concurrently": "^5.3.0",
     "nodemon": "^1.19.4"
   },
-  "proxy": "http://localhost:3001"
+  "proxy": "http://localhost:3001",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sxiong6901/TheBudgetBuffet.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/sxiong6901/TheBudgetBuffet/issues"
+  },
+  "homepage": "https://github.com/sxiong6901/TheBudgetBuffet#readme"
 }
