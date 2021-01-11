@@ -12,7 +12,7 @@ const Recipes = ({title, image, ingredients}) => {
                 ))}
             </ol>
           
-            <img src={image} alt="" />
+            <img src={image} alt="" /><hr></hr>
         </div>
     )
 };
