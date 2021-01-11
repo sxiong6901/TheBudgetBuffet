@@ -56,8 +56,16 @@ const MyRecipes = props => {
 			<h1>My Recipes</h1>
 			<p>Create a recipe, save for future use and share with friends</p>
 
+<<<<<<< HEAD
 			{recipes && recipes.map(recipe => <RecipeCard key={recipe._id} recipe={recipe} removeRecipe={deleteRecipe} saveRecipe={save}></RecipeCard>)}
 
+=======
+
+			{recipes && recipes.map(recipe => <RecipeCard key={recipe._id} recipe={recipe} removeRecipe={deleteRecipe} saveRecipe={save}></RecipeCard>)}
+
+
+</div>
+>>>>>>> 2ddfd99cc5265ac4faae70afa8d4f067035d9187
 </div>
 	)
 }
