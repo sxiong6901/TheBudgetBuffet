@@ -29,6 +29,9 @@ const Home = ({profile}) => {
     				</p>
 				</div>			 */}
 					<img src="image.png" className="App-logo" alt="logo" style={{width: "100%", height: "100%"}}/>
+					<div></div>
+					
+					{/* <h2 style={{textAlign:"center"}}><strong>Let's Get Started!</strong> </h2> */}
 		   </div>
 		  </div>
 		</div>

@@ -40,6 +40,7 @@
 	 /* background-color: #2196F3;  */
 	  padding: 10px;
 	  font-size: 10px; 
+	  text-align: center; 
 	  
   }
   span.remove {
@@ -67,6 +68,7 @@ body {background: #eccf77
 
 .card { 
 	background-color: rgba(245, 245, 245, 0.4); 
+	text-align: center; 
 }
 .card-header, .card-footer { 
 	opacity: 1}
@@ -88,3 +90,6 @@ body {background: #eccf77
 	font-weight: bold;
 	color: #000000;
   }
+
+
+ 

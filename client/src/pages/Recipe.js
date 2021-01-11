@@ -22,7 +22,8 @@ const Recipe = ({ profile }) => {
 
 
 		<div className="createRecipe">
-			
+			<h1 style={{textAlign: "center"}}>Create A Recipe</h1>
+			<h5 style={{textAlign: "center"}}>Add Your Favorite Recipe and Make It Available to Share with Friends!</h5>
 
 			<form onSubmit={formSubmit}>
 				<div className="form-group">

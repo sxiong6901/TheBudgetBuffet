@@ -34,7 +34,9 @@ const RecipeSearch = () =>  {
 	return (
 
 		<div className="recipeSearch">
-			<form onSubmit={getSearch} className="search-form">
+			<h1 style={{textAlign: "center"}}>Search For A Recipe</h1>
+			<h5 style={{textAlign: "center"}}>Enter two or more items in the search bar below: </h5>
+			<form onSubmit={getSearch} className="search-form" style={{textAlign: "center"}}> 
 				<input 
 				className="search-bar"
 				type="text"
