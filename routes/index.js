@@ -21,11 +21,8 @@ usersRouter.route('/view').get(usersCtrl.viewRecipe)
 
 usersRouter.route('/myRecipe').get(usersCtrl.myRecipes)
 
-<<<<<<< HEAD
 usersRouter.route('/myRecipe/:id').put(usersCtrl.updateRecipe)
 
-=======
->>>>>>> cdbe3cd89ad8fa306af327f52c660a1e9b15867f
 usersRouter.route('/secret').get(usersCtrl.show)
 
 usersRouter.route('/:id').patch(usersCtrl.update)
