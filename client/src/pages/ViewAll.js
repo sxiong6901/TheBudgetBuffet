@@ -53,7 +53,8 @@ const ViewAll = props => {
 		<button type="submit"><i className="fa fa-search">Search</i></button></p>
 			
         </container> */}
-		<h2>Explore Recipes Created By Other Users</h2>
+		<div></div>
+		<h2 >Explore Recipes Created By Other Users</h2>
 			{/* <div className="form-group">
 				<input
 					onChange={e => handleSearch(e.target.value)}

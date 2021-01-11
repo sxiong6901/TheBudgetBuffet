@@ -53,8 +53,8 @@ const MyRecipes = props => {
 	return (
 		<div className="my-recipes">
 
-			<h1>My Recipes</h1>
-			<p>Create a recipe, save for future use and share with friends</p>
+			<h1 style={{textAlign: "center"}} >My Recipes</h1>
+			
 
 			{recipes && recipes.map(recipe => <RecipeCard key={recipe._id} recipe={recipe} removeRecipe={deleteRecipe} saveRecipe={save}></RecipeCard>)}
 
