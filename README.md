@@ -4,6 +4,7 @@
   * [Installation](#Installation)
   * [Deployment](#Deployed)
   * [License](#license)
+  * [Technologies](#Technologies)
   * [Author](#Author)
 
 ## Title
@@ -26,7 +27,7 @@ This App is deployed on Heroku: https://budget-buffet.herokuapp.com
 MIT
 
 
-## Technologies Used
+## Technologies
 Node.js, Mongoose/Mongo, Express, React.js, JSX
 
 ## Author
