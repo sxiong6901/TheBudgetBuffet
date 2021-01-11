@@ -3,6 +3,7 @@
   * [Description](#About)
   * [Installation](#Installation)
   * [Deployment](#Deployed)
+  * [Demo](#Demo)
   * [License](#license)
   * [Technologies](#Technologies)
   * [Author](#Author)
@@ -22,6 +23,9 @@ This app was created with the purpose of helping people impacted by Covid-19 fin
 This App is deployed on Heroku: https://budget-buffet.herokuapp.com
 
 ![myimage-alt-tag](https://github.com/sxiong6901/TheBudgetBuffet/blob/main/client/public/The%20budget%20buffet.JPG)
+
+## Demo
+![Usage]()
 
 ## License
 MIT
