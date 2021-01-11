@@ -87,6 +87,7 @@ const API = {
 			console.log(serverResponse)
 			return serverResponse.data
 		})
+<<<<<<< HEAD
 	},
 	updateRecipe: function(recipeId){
 		return axios.put(`/api/users/myRecipe/${recipeId}`)
@@ -102,6 +103,9 @@ const API = {
 	// 	return axios.post("/api/users/favorites", recipe);
 	//   }	
 
+=======
+	}
+>>>>>>> cdbe3cd89ad8fa306af327f52c660a1e9b15867f
 	// myFavorites: function(recipe){
 	// 	return axios.post(`/api/users/favorites`,recipe)
 	// 	.then((serverResponse) => {	

@@ -12,6 +12,11 @@ import Home from './pages/home'
 import MyRecipe from './pages/MyRecipes'
 import RecipeSearch from './pages/recipeSearch'
 import Favorites from './pages/MyFavorites'
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> cdbe3cd89ad8fa306af327f52c660a1e9b15867f
 
 
 class App extends React.Component {

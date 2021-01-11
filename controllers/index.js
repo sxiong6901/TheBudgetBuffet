@@ -32,7 +32,11 @@ module.exports = {
 			console.log('Sign up! It works!')
 			console.log(req.body)
 			console.log(user)
+<<<<<<< HEAD
 			if (err) return res.json({ success: false, code: err.code })
+=======
+			if(err) return res.json({success: false, code: err.code})
+>>>>>>> cdbe3cd89ad8fa306af327f52c660a1e9b15867f
 			// once user is created, generate a JWT and return to client"
 			const token = signToken(user)
 			res.json({ success: true, message: "User created. Token attached.", token })
@@ -87,6 +91,7 @@ module.exports = {
 		});
 		// let doc = await User.find({email: userProfile.email}).lean()		
 	},
+<<<<<<< HEAD
 
 	viewRecipe: async (req, res) => {
 		const token = req.get('token')
@@ -128,6 +133,21 @@ module.exports = {
 
 
 
+=======
+	
+	viewRecipe: async (req, res)=>{
+		const token = req.get('token')
+		if(!token){
+			return res.sendStatus('403')
+		}
+		const recipes = await User.find({recipes:{$gt: []}},{recipes:1, _id:0})
+		let recpArr = []
+		recipes.forEach(recipe=>recipe.recipes.forEach(recipeSingular=>recpArr.push(recipeSingular)))
+		res.json(recpArr)
+		
+		
+	},
+>>>>>>> cdbe3cd89ad8fa306af327f52c660a1e9b15867f
 	// myFavorites: async(req, res)=>{
 	// 	const token = req.get('token')
 	// 	if(!token){
@@ -141,28 +161,50 @@ module.exports = {
 	// 		{new: true, runValidators: true}
 	// 		).then(function(recipe) {
 	// 		res.json(recipe);
+<<<<<<< HEAD
 
+=======
+			
+>>>>>>> cdbe3cd89ad8fa306af327f52c660a1e9b15867f
 	// 	  });
 	// 	// let doc = await User.find({email: userProfile.email}).lean()		
 	// },
 
+<<<<<<< HEAD
 	myRecipes: (req, res) => {
 		const token = req.get('token')
 		if (!token) {
+=======
+	myRecipes: (req, res)=>{
+		const token = req.get('token')
+		if(!token){
+>>>>>>> cdbe3cd89ad8fa306af327f52c660a1e9b15867f
 			return res.sendStatus('403')
 		}
 		let userProfile = jwtDecode(token)
 		console.log(userProfile)
+<<<<<<< HEAD
 		User.findById(userProfile._id, (err, user) => {
 			if (err) {
+=======
+		User.findById(userProfile._id,(err, user)=>{
+			if (err){
+>>>>>>> cdbe3cd89ad8fa306af327f52c660a1e9b15867f
 				console.log(err);
 				return res.sendStatus(500);
 			}
 			res.json(user.recipes);
 		});
+<<<<<<< HEAD
 
 
 
 
+=======
+		
+	
+			
+		
+>>>>>>> cdbe3cd89ad8fa306af327f52c660a1e9b15867f
 	}
 }
