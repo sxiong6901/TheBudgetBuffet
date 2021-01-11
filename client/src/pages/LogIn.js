@@ -35,7 +35,7 @@ class LogIn extends React.Component {
 				<div styles={{backgroundImage:`url(${cooking})`}}>
 				<div className='row'>
 					<div className='column column-33 column-offset-33'>
-						<h1>Log In</h1>
+						<h1 style={{textAlign: "center"}}>Log In</h1>
 						<form  onSubmit={this.onFormSubmit.bind(this)}>
 							<input 
 								type="text" 

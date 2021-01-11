@@ -50,6 +50,7 @@
 	  margin: 5px;
 	  border-radius: 10%;
 	  flex-direction: column;
+	  text-align: center;
   }
   span.save {
 	  background-color: purple;

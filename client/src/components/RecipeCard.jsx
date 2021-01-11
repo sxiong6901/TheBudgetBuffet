@@ -18,7 +18,7 @@ const RecipeCard =props => {
                 </ul>
                 <h5>Instructions:</h5>
                 <p className="card-text">{props.recipe.instructions}</p>
-
+                
             </div>
         </div>
     )
