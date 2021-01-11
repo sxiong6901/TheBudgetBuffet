@@ -1,6 +1,6 @@
 const jwtDecode = require('jwt-decode')
-const User = 	  require('../models/User.js')
-const jokes = 	  require('../data')
+const User = require('../models/User.js')
+const jokes = require('../data')
 const signToken = require('../auth').signToken
 
 module.exports = {
@@ -15,24 +15,27 @@ module.exports = {
 	show: async (req, res) => {
 		// retrieve jwt from headers
 		const token = req.get('token')
-		if(!token){
+		if (!token) {
 			return res.sendStatus('403')
 		}
-		let userProfile = jwtDecode(token)		
+		let userProfile = jwtDecode(token)
 		let joke = jokes[Math.floor(Math.random() * jokes.length)]
 		// note we execute .lean() to convert a mongoose document to js doc
-		let doc = await User.find({email: userProfile.email}).lean()		
-		doc[0].joke = joke				
+		let doc = await User.find({ email: userProfile.email }).lean()
+		doc[0].joke = joke
 		res.json(doc)
 	},
 
 	// create a new user
 	create: (req, res) => {
 		User.create(req.body, (err, user) => {
-			if(err) return res.json({success: false, code: err.code})
+			console.log('Sign up! It works!')
+			console.log(req.body)
+			console.log(user)
+			if (err) return res.json({ success: false, code: err.code })
 			// once user is created, generate a JWT and return to client"
 			const token = signToken(user)
-			res.json({success: true, message: "User created. Token attached.", token})
+			res.json({ success: true, message: "User created. Token attached.", token })
 		})
 	},
 
@@ -41,7 +44,7 @@ module.exports = {
 		User.findById(req.params.id, (err, user) => {
 			Object.assign(user, req.body)
 			user.save((err, updatedUser) => {
-				res.json({success: true, message: "User updated.", user})
+				res.json({ success: true, message: "User updated.", user })
 			})
 		})
 	},
@@ -49,39 +52,117 @@ module.exports = {
 	// delete an existing user
 	destroy: (req, res) => {
 		User.findByIdAndRemove(req.params.id, (err, user) => {
-			res.json({success: true, message: "User deleted.", user})
+			res.json({ success: true, message: "User deleted.", user })
 		})
 	},
 
 	// the login route
 	authenticate: (req, res) => {
 		// check if the user exists
-		User.findOne({email: req.body.email}, (err, user) => {
+		User.findOne({ email: req.body.email }, (err, user) => {
 			// if there's no user or the password is invalid
-			if(!user || !user.validPassword(req.body.password)) {
+			if (!user || !user.validPassword(req.body.password)) {
 				// deny access
-				return res.json({success: false, message: "Invalid credentials."})
+				return res.json({ success: false, message: "Invalid credentials." })
 			}
 
 			const token = signToken(user)
-			res.json({success: true, message: "Token attached.", token})
+			res.json({ success: true, message: "Token attached.", token })
 		})
 	},
-	makeRecipe: (req, res)=>{
+	makeRecipe: (req, res) => {
 		const token = req.get('token')
-		if(!token){
+		if (!token) {
 			return res.sendStatus('403')
 		}
 		let userProfile = jwtDecode(token)
 		console.log(userProfile)
 		User.findByIdAndUpdate(
 			userProfile._id,
-			{$push: {recipes: req.body}},
-			{new: true, runValidators: true}
-			).then(function(recipe) {
+			{ $push: { recipes: req.body } },
+			{ new: true, runValidators: true }
+		).then(function (recipe) {
 			res.json(recipe);
-			
-		  });
+
+		});
 		// let doc = await User.find({email: userProfile.email}).lean()		
+	},
+
+	viewRecipe: async (req, res) => {
+		const token = req.get('token')
+		if (!token) {
+			return res.sendStatus('403')
+		}
+		const recipes = await User.find({ recipes: { $gt: [] } }, { recipes: 1, _id: 0 })
+		let recpArr = []
+		recipes.forEach(recipe => recipe.recipes.forEach(recipeSingular => recpArr.push(recipeSingular)))
+		res.json(recpArr)
+
+
+	},
+
+	updateRecipe: async (req, res) => {
+		const token = req.get("token");
+		if (!token) return res.sendStatus(403);
+		let userProfile = jwtDecode(token);
+
+		console.log("User ID: ", userProfile._id);
+		console.log("Recipe ID: ", req.params.id);
+		console.log("Req.Params:", req.params)
+		
+
+		const user = await User.findById(userProfile._id)
+		const recipes=user.recipes.filter(recipe=>`${recipe._id}` !== req.params.id)
+		user.recipes=recipes
+		await user.save()
+		res.json(user)
+		
+		
+		const newUser=await User
+			   .findOneAndUpdate({ _id: req.params.id },{recipes},{new: true})
+			   console.log({newUser})
+		
+		 
+		
+	},
+
+
+
+	// myFavorites: async(req, res)=>{
+	// 	const token = req.get('token')
+	// 	if(!token){
+	// 		return res.sendStatus('403')
+	// 	}
+	// 	let userProfile = jwtDecode(token)
+	// 	console.log(userProfile)
+	// 	await User.findByIdAndUpdate(
+	// 		userProfile._id,
+	// 		{$push: {recipes: req.body}},
+	// 		{new: true, runValidators: true}
+	// 		).then(function(recipe) {
+	// 		res.json(recipe);
+
+	// 	  });
+	// 	// let doc = await User.find({email: userProfile.email}).lean()		
+	// },
+
+	myRecipes: (req, res) => {
+		const token = req.get('token')
+		if (!token) {
+			return res.sendStatus('403')
+		}
+		let userProfile = jwtDecode(token)
+		console.log(userProfile)
+		User.findById(userProfile._id, (err, user) => {
+			if (err) {
+				console.log(err);
+				return res.sendStatus(500);
+			}
+			res.json(user.recipes);
+		});
+
+
+
+
 	}
 }

@@ -15,6 +15,14 @@ usersRouter.post('/authenticate', usersCtrl.authenticate)
 // this is the firewell
 usersRouter.route('/add').post(usersCtrl.makeRecipe)
 
+// usersRouter.route('/favorites').post(usersCtrl.myFavorites)
+
+usersRouter.route('/view').get(usersCtrl.viewRecipe)
+
+usersRouter.route('/myRecipe').get(usersCtrl.myRecipes)
+
+usersRouter.route('/myRecipe/:id').put(usersCtrl.updateRecipe)
+
 usersRouter.route('/secret').get(usersCtrl.show)
 
 usersRouter.route('/:id').patch(usersCtrl.update)

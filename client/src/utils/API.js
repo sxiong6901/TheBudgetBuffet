@@ -71,7 +71,45 @@ const API = {
 			console.log(serverResponse)
 			return serverResponse
 		})
-	}
+	},
+	viewRecipe: function(recipe){
+		return axios.get(`/api/users/view`,recipe)
+		.then((serverResponse) => {	
+			console.log(`response from server`)
+			console.log(serverResponse)
+			return serverResponse.data
+		})
+	},
+	myRecipes: function(recipe){
+		return axios.get(`/api/users/myRecipe`,recipe)
+		.then((serverResponse) => {	
+			console.log(`response from server`)
+			console.log(serverResponse)
+			return serverResponse.data
+		})
+	},
+	updateRecipe: function(recipeId){
+		return axios.put(`/api/users/myRecipe/${recipeId}`)
+		.then((serverResponse) => {	
+			console.log(`response from server`)
+			console.log(serverResponse)
+			// console.log(recipe.recipe)
+			return serverResponse.recipeId
+		})
+	
+	},
+	// saveRecipe: function(recipe) {
+	// 	return axios.post("/api/users/favorites", recipe);
+	//   }	
+
+	// myFavorites: function(recipe){
+	// 	return axios.post(`/api/users/favorites`,recipe)
+	// 	.then((serverResponse) => {	
+	// 		console.log(`response from server`)
+	// 		console.log(serverResponse)
+	// 		return serverResponse.data
+	// 	})
+	// },
 }
 axios.defaults.headers.common['token'] = API.getToken()
 
