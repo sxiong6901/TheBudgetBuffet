@@ -1,15 +1,15 @@
 ## Table of Contents
   * [Title](#Title)
-  * [Description](#About The Budget Buffet)
+  * [Description](#About)
   * [Installation](#Installation)
-  * [Deployment](#Deployed Application)
+  * [Deployment](#Deployed)
   * [License](#license)
   * [Author](#Author)
 
 ## Title
 The Budget Buffet
 
-## About The Budget Buffet
+## About
 This app was created with the purpose of helping people impacted by Covid-19 financially by allowing them to enter the ingredients they have in their home and a recipe is generated based off of the entered ingredients.
 
 ## Installation
@@ -17,7 +17,7 @@ This app was created with the purpose of helping people impacted by Covid-19 fin
 * npm install
 * npm run start
 
-## Deployed Application
+## Deployed
 This App is deployed on Heroku: https://budget-buffet.herokuapp.com
 
 ![myimage-alt-tag]()
@@ -26,7 +26,7 @@ This App is deployed on Heroku: https://budget-buffet.herokuapp.com
 MIT
 
 
-## Technologies Used: 
+## Technologies Used
 Node.js, Mongoose/Mongo, Express, React.js, JSX
 
 ## Author
