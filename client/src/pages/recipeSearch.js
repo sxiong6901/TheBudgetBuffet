@@ -49,7 +49,8 @@ const RecipeSearch = () =>  {
          	</form>
 			 {recipes.map(recipe => (
 				 <Recipes
-				 key={recipe.recipe.label}
+				key={recipe.recipe.label}
+				 image={recipe.recipe.image}
 				 title={recipe.recipe.label}
 				 ingredients={recipe.recipe.ingredients}
 			 />
