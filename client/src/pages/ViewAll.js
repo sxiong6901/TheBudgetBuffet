@@ -4,8 +4,8 @@ import API from '../utils/API'
 
 const ViewAll = props => {
 	const [recipes, setRecipes] = useState([])
-	const [favoriteRecipes, setFavoriteRecipes] = useState([])
-	const [term, setTerm] = useState([])
+	// const [favoriteRecipes, setFavoriteRecipes] = useState([])
+	// const [term, setTerm] = useState([])
 	// const [filteredList, setList]= useState([])
 	// const [search, setSearch] = useState("");
 	
@@ -27,21 +27,21 @@ const ViewAll = props => {
 			})
 	}, [])
 
-	const save = (id) => {
-		console.log(id)
+	// const save = (id) => {
+	// 	console.log(id)
 
-		var favoritesList = []
-		recipes.forEach(element => {
-			if (element._id === id) {
-				favoritesList.push(element)
-				setFavoriteRecipes(favoritesList)
-				console.log(favoritesList)
-			}
+	// 	var favoritesList = []
+	// 	recipes.forEach(element => {
+	// 		if (element._id === id) {
+	// 			favoritesList.push(element)
+	// 			setFavoriteRecipes(favoritesList)
+	// 			console.log(favoritesList)
+	// 		}
 
-		})
+	// 	})
 
 
-	}
+	// }
 
 
 
@@ -69,7 +69,7 @@ const ViewAll = props => {
 
 
 			{recipes && recipes.map(recipe => (
-				<RecipeCard2 key={recipe._id} recipe={recipe} saveRecipe={save}  />
+				<RecipeCard2 key={recipe._id} recipe={recipe}  />
 
 			))}
 		</>

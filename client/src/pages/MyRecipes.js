@@ -6,7 +6,7 @@ import CardGroup from 'react-bootstrap/CardGroup'
 
 const MyRecipes = props => {
 	const [recipes, setRecipes] = useState([])
-	const [favoriteRecipes, setFavoriteRecipes] = useState([])
+	// const [favoriteRecipes, setFavoriteRecipes] = useState([])
 	// useEffect(()=> {
 	// 	API.myFavorites()
 	// 	.then(results=> {
@@ -40,7 +40,7 @@ const MyRecipes = props => {
 		recipes.forEach(element => {
 			if (element._id === id) {
 				favoritesList.push(element)
-				setFavoriteRecipes(favoritesList)
+				// setFavoriteRecipes(favoritesList)
 				console.log(favoritesList)
 			}
 
@@ -58,7 +58,9 @@ const MyRecipes = props => {
 
 			{recipes && recipes.map(recipe => <RecipeCard key={recipe._id} recipe={recipe} removeRecipe={deleteRecipe} saveRecipe={save}></RecipeCard>)}
 
+
 </div>
+
 	)
 }
 

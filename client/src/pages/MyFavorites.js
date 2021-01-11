@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react'
-import RecipeCard from '../components/RecipeCard'
-import API from '../utils/API'
+// import React, { useEffect, useState } from 'react'
+// import RecipeCard from '../components/RecipeCard'
+// import API from '../utils/API'
 
-const Favorites = props => {
+// const Favorites = props => {
 
 	// const [recipes, setRecipes] = useState([])
 
@@ -15,13 +15,13 @@ const Favorites = props => {
 	// }, [])
 
 
-	return (
-		<>
-			<h1>My Favorites</h1>
+	// return (
+	// 	<>
+	// 		<h1>My Favorites</h1>
 			
 			{/* {recipes && recipes.map( recipe => <RecipeCard key={recipe._id} recipe={recipe} />)} */}
-		</>
-	)
-}
+// 		</>
+// 	)
+// }
 
-export default Favorites
+// export default Favorites
