@@ -21,14 +21,14 @@ const Home = ({profile}) => {
 		  <div className='row'>
 			 <div className='column column-33 column-offset-33'>
 			 	{/* <img src={vipImage} height={90} width={90} alt="VIP" /> */}
-				<h4>Welcome {profile.name}!</h4>
-				<h6>{profile.email}</h6>
+				<h4 style={{textAlign: "center"}}><strong>Welcome {profile.name}!</strong></h4>
+				<h6 style={{textAlign: "center"}}>{profile.email}</h6>
 				{/* <div className="padded-multiline">
   					<p>    					
       					{profile.token}
     				</p>
 				</div>			 */}
-					<img src="BudgetPlanning.png" className="App-logo" alt="logo" />
+					<img src="image.png" className="App-logo" alt="logo" style={{width: "100%", height: "100%"}}/>
 		   </div>
 		  </div>
 		</div>

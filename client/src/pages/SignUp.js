@@ -34,10 +34,10 @@ class SignUp extends React.Component {
 			<div className='SignUp'>
 				<div className='row'>
 					<div className='column column-33 column-offset-33'>
-						<h1 style={{backgroundColor: "lightblue"}}>Sign Up</h1>
+						<h1 style={{textAlign: "center"}}>Sign Up</h1>
 						<img src={logo}
 						alt= "doggo"
-						style={{height: "300px"}}></img>
+						style={{height: "300px", alignContent: "center"}}></img>
 						<form onSubmit={this.onFormSubmit.bind(this)}>
 							<input 
 								type="text" 
