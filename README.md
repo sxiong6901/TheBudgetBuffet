@@ -35,10 +35,10 @@ MIT
 Node.js, Mongoose/Mongo, Express, React.js, JSX
 
 ## Author
-Felicia Wright
-James Lee
-Shawanda Ford
-Soua Xiong
+* Felicia Wright
+* James Lee
+* Shawanda Ford
+* Soua Xiong
 
 Felicia & James: Front End CSS
 Pa and Shawanda: Back End
