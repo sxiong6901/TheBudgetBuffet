@@ -25,7 +25,7 @@ This App is deployed on Heroku: https://budget-buffet.herokuapp.com
 ![myimage-alt-tag](https://github.com/sxiong6901/TheBudgetBuffet/blob/main/client/public/The%20budget%20buffet.JPG)
 
 ## Demo
-![Usage]()
+![Demo](https://github.com/sxiong6901/TheBudgetBuffet/blob/main/client/public/demo.gif?raw=true)
 
 ## License
 MIT
